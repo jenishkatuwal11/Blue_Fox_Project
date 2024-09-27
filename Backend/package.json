@@ -9,7 +9,6 @@
   "author": "Jenish Katuwal Karsang Lama Suyog Dahal",
   "license": "MIT",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
     "express": "^4.21.0",
     "mongodb": "^6.9.0",
     "nodemon": "^3.1.7"
