@@ -74,7 +74,7 @@ const Navbar = () => {
           {/* Centered Navigation Links */}
           <div className="flex-1 flex justify-center space-x-6 text-lg font-semibold">
             <a href="#" className="text-gray-700 hover:text-blue-600">
-              Demo
+              Home
             </a>
             <a href="#" className="text-gray-700 hover:text-blue-600">
               Properties
