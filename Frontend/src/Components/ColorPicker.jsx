@@ -2,13 +2,23 @@ import React, { useState } from "react";
 
 const ColorPicker = () => {
   const [themeColor, setThemeColor] = useState("#000000"); // Default color
+  // jhjhdbjhdb
 
-  const colors = ["#ff5722", "#ff9800", "#4caf50", "#2196f3", "#3f51b5", "#9c27b0", "#00bcd4", "#795548"];
+  const colors = [
+    "#ff5722",
+    "#ff9800",
+    "#4caf50",
+    "#2196f3",
+    "#3f51b5",
+    "#9c27b0",
+    "#00bcd4",
+    "#795548",
+  ];
 
   // Function to change the color
   const changeThemeColor = (color) => {
     setThemeColor(color);
-    document.documentElement.style.setProperty("--primary-color", color);  // Change CSS variable
+    document.documentElement.style.setProperty("--primary-color", color); // Change CSS variable
   };
 
   return (
@@ -33,20 +43,32 @@ const ColorPicker = () => {
       {/* Other Options */}
       <div className="mt-6">
         <h4 className="font-semibold">RTL VERSION</h4>
-        <button className="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg">RTL Version</button>
-        <button className="mt-2 ml-2 bg-blue-600 text-white px-4 py-2 rounded-lg">LTR Version</button>
+        <button className="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg">
+          RTL Version
+        </button>
+        <button className="mt-2 ml-2 bg-blue-600 text-white px-4 py-2 rounded-lg">
+          LTR Version
+        </button>
       </div>
 
       <div className="mt-6">
         <h4 className="font-semibold">Boxed Version</h4>
-        <button className="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg">Boxed</button>
-        <button className="mt-2 ml-2 bg-blue-600 text-white px-4 py-2 rounded-lg">Full Width</button>
+        <button className="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg">
+          Boxed
+        </button>
+        <button className="mt-2 ml-2 bg-blue-600 text-white px-4 py-2 rounded-lg">
+          Full Width
+        </button>
       </div>
 
       <div className="mt-6">
         <h4 className="font-semibold">Want Sticky Header</h4>
-        <button className="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg">Yes</button>
-        <button className="mt-2 ml-2 bg-blue-600 text-white px-4 py-2 rounded-lg">No</button>
+        <button className="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg">
+          Yes
+        </button>
+        <button className="mt-2 ml-2 bg-blue-600 text-white px-4 py-2 rounded-lg">
+          No
+        </button>
       </div>
     </div>
   );
