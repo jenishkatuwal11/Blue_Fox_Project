@@ -20,7 +20,9 @@ const Service = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <div className="lg:text-center" data-aos="fade-up">
-          <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Our Services</h2>
+          <h2 className="text-base font-semibold tracking-wide uppercase" style={{ color: 'var(--primary-color)' }}>
+            Our Services
+          </h2>
           <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
             Explore Our Real Estate Solutions
           </p>
@@ -63,7 +65,8 @@ const Service = () => {
         <div className="text-center mt-10" data-aos="fade-up" data-aos-delay="800">
           <button
             onClick={handleExploreSolutions}
-            className="bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition-colors duration-300"
+            className="px-6 py-3 rounded-full hover:bg-blue-600 transition-colors duration-300"
+            style={{ backgroundColor: 'var(--primary-color)', color: 'white' }}  // Applying theme color
           >
             Explore Solutions
           </button>

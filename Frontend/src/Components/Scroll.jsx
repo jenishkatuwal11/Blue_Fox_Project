@@ -31,7 +31,7 @@ const Scroll = () => {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="p-4 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-all"
+          className="p-4 bg-[var(--primary-color)] text-white rounded-full shadow-lg hover:bg-opacity-90 transition-all"
         >
           <FaArrowUp size={24} />
         </button>

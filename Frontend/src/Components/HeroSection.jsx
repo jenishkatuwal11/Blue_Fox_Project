@@ -51,14 +51,14 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-black opacity-50"></div>
 
       {/* Hero Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-[var(--primary-color)]">
         {/* Hero Title */}
         <h1
           className="text-5xl md:text-6xl font-bold tracking-wide"
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          Discover Your Dream Home
+          Find Your Perfect Room
         </h1>
 
         {/* Hero Subtitle */}
@@ -67,7 +67,7 @@ const HeroSection = () => {
           data-aos="fade-up"
           data-aos-delay="300"
         >
-          We help you find the best luxury properties with a wide selection of premium listings.
+          We help you find the best rooms and roommates, from affordable options to luxurious spaces.
         </p>
 
         {/* Buttons */}
@@ -76,7 +76,7 @@ const HeroSection = () => {
           data-aos="fade-up"
           data-aos-delay="500"
         >
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md shadow-md transition duration-300">
+          <button className="bg-[var(--primary-color)] hover:bg-opacity-90 text-white px-6 py-3 rounded-md shadow-md transition duration-300">
             Explore Now
           </button>
           <button className="bg-gray-100 hover:bg-gray-200 text-black px-6 py-3 rounded-md shadow-md transition duration-300">
@@ -88,7 +88,7 @@ const HeroSection = () => {
       {/* Toggle Buttons */}
       <div className="absolute inset-y-0 left-0 flex items-center justify-center z-20">
         <button
-          className="text-white text-2xl bg-black bg-opacity-50 p-4 rounded-full focus:outline-none hover:bg-opacity-75 transition"
+          className="text-[var(--primary-color)] text-2xl bg-black bg-opacity-50 p-4 rounded-full focus:outline-none hover:bg-opacity-75 transition"
           onClick={handlePreviousImage}
         >
           <FaChevronLeft />
@@ -97,7 +97,7 @@ const HeroSection = () => {
 
       <div className="absolute inset-y-0 right-0 flex items-center justify-center z-20">
         <button
-          className="text-white text-2xl bg-black bg-opacity-50 p-4 rounded-full focus:outline-none hover:bg-opacity-75 transition"
+          className="text-[var(--primary-color)] text-2xl bg-black bg-opacity-50 p-4 rounded-full focus:outline-none hover:bg-opacity-75 transition"
           onClick={handleNextImage}
         >
           <FaChevronRight />

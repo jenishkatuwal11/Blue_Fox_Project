@@ -6,81 +6,109 @@ import {
   FaTwitter,
   FaInstagram,
   FaLinkedinIn,
-} from "react-icons/fa";  // Social media icons
+} from "react-icons/fa"; // Importing social icons
+import agentImage1 from '../assets/Agent1.png';  // Example image for agent 1
+import agentImage2 from '../assets/Agent2.png';  // Example image for agent 2
+import agentImage3 from '../assets/Agent3.png';  // Example image for agent 3
 
-const Footer = () => {
+const Agent = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000, easing: 'ease-in-out' });  // Initialize AOS animations
+    AOS.init({ duration: 1000 });  // Initialize AOS with a duration of 1000ms
   }, []);
 
+  const agents = [
+    {
+      id: 1,
+      name: "Suyog Dahal",
+      role: "Senior Real Estate Agent",
+      image: agentImage1,
+      socials: {
+        facebook: "#",
+        twitter: "#",
+        instagram: "#",
+        linkedin: "#",
+      },
+    },
+    {
+      id: 2,
+      name: "Karsang Lama",
+      role: "Luxury Property Specialist",
+      image: agentImage2,
+      socials: {
+        facebook: "#",
+        twitter: "#",
+        instagram: "#",
+        linkedin: "#",
+      },
+    },
+    {
+      id: 3,
+      name: "Jenish Katuwal",
+      role: "Commercial Real Estate Agent",
+      image: agentImage3,
+      socials: {
+        facebook: "#",
+        twitter: "#",
+        instagram: "#",
+        linkedin: "#",
+      },
+    },
+  ];
+
   return (
-    <footer className="bg-gray-900 text-gray-300 py-16">
+    <section className="bg-gray-100 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8" data-aos="fade-up">
-          {/* Column 1: About Us */}
-          <div>
-            <h3 className="text-white font-bold text-xl mb-4">About Us</h3>
-            <p className="text-gray-400">
-              We offer high-quality real estate services to help you find your perfect home or property. Our professional team is here to guide you through every step of the process.
-            </p>
-          </div>
-
-          {/* Column 2: Quick Links */}
-          <div>
-            <h3 className="text-white font-bold text-xl mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="hover:text-white">Home</a></li>
-              <li><a href="#" className="hover:text-white">About Us</a></li>
-              <li><a href="#" className="hover:text-white">Properties</a></li>
-              <li><a href="#" className="hover:text-white">Services</a></li>
-              <li><a href="#" className="hover:text-white">Contact</a></li>
-            </ul>
-          </div>
-
-          {/* Column 3: Contact Info */}
-          <div>
-            <h3 className="text-white font-bold text-xl mb-4">Contact Us</h3>
-            <ul className="space-y-2">
-              <li>123 Real Estate Street, Kathmandu</li>
-              <li>Email: info@realestate.com</li>
-              <li>Phone: +977-01-555-5555</li>
-            </ul>
-          </div>
-
-          {/* Column 4: Social Media & Newsletter */}
-          <div>
-            <h3 className="text-white font-bold text-xl mb-4">Follow Us</h3>
-            <div className="flex space-x-4 mb-6">
-              <a href="#" className="text-gray-400 hover:text-white"><FaFacebookF /></a>
-              <a href="#" className="text-gray-400 hover:text-white"><FaTwitter /></a>
-              <a href="#" className="text-gray-400 hover:text-white"><FaInstagram /></a>
-              <a href="#" className="text-gray-400 hover:text-white"><FaLinkedinIn /></a>
-            </div>
-            <h3 className="text-white font-bold text-xl mb-4">Newsletter</h3>
-            <p className="text-gray-400 mb-4">Subscribe to our newsletter to get the latest updates.</p>
-            <form className="flex space-x-2">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full px-4 py-2 rounded-md text-gray-900 focus:outline-none"
-              />
-              <button
-                type="submit"
-                className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
+        {/* Section Title */}
+        <div className="lg:text-center" data-aos="fade-up">
+          <h2 className="text-base text-[var(--primary-color)] font-semibold tracking-wide uppercase">Meet Our Agents</h2>
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            Our Dedicated Real Estate Professionals
+          </p>
+          <p className="mt-4 max-w-2xl text-xl text-gray-600 lg:mx-auto">
+            Our team of highly experienced agents is here to help you with all your real estate needs.
+          </p>
         </div>
 
-        <div className="border-t border-gray-700 mt-12 pt-8 text-center" data-aos="fade-up" data-aos-delay="200">
-          <p className="text-gray-500">&copy; {new Date().getFullYear()} Renting Room. All rights reserved.</p>
+        {/* Agents Cards */}
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+          {agents.map((agent) => (
+            <div key={agent.id} className="bg-white shadow-lg rounded-lg overflow-hidden" data-aos="zoom-in">
+              {/* Image Section */}
+              <div className="relative w-full h-72">
+                <img 
+                  src={agent.image} 
+                  alt={agent.name} 
+                  className="absolute inset-0 w-full h-full object-cover rounded-t-lg" 
+                />
+              </div>
+              
+              {/* Agent Info */}
+              <div className="p-6 text-center">
+                <h3 className="text-xl font-semibold text-gray-900">{agent.name}</h3>
+                <p className="text-[var(--primary-color)] text-lg font-bold mt-2">{agent.role}</p>
+
+                {/* Social Media Icons */}
+                <div className="mt-4 flex justify-center space-x-4">
+                  <a href={agent.socials.facebook} className="text-[var(--primary-color)] hover:text-blue-800">
+                    <FaFacebookF className="w-6 h-6" />
+                  </a>
+                  <a href={agent.socials.twitter} className="text-[var(--primary-color)] hover:text-blue-800">
+                    <FaTwitter className="w-6 h-6" />
+                  </a>
+                  <a href={agent.socials.instagram} className="text-[var(--primary-color)] hover:text-blue-800">
+                    <FaInstagram className="w-6 h-6" />
+                  </a>
+                  <a href={agent.socials.linkedin} className="text-[var(--primary-color)] hover:text-blue-800">
+                    <FaLinkedinIn className="w-6 h-6" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    </footer>
+    </section>
   );
 };
 
-export default Footer;
- 
+export default Agent;

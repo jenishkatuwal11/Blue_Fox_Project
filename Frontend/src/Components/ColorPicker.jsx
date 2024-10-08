@@ -1,15 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
-const ColorPicker = () => {
-  const [themeColor, setThemeColor] = useState("#000000"); // Default color
-
+const ColorPicker = ({ onColorChange }) => {
   const colors = ["#ff5722", "#ff9800", "#4caf50", "#2196f3", "#3f51b5", "#9c27b0", "#00bcd4", "#795548"];
-
-  // Function to change the color
-  const changeThemeColor = (color) => {
-    setThemeColor(color);
-    document.documentElement.style.setProperty("--primary-color", color);  // Change CSS variable
-  };
 
   return (
     <div className="fixed left-0 top-0 bg-gray-800 p-4 z-50 text-white w-64 h-screen shadow-lg">
@@ -24,29 +16,10 @@ const ColorPicker = () => {
               key={color}
               className="w-8 h-8 rounded-full"
               style={{ backgroundColor: color }}
-              onClick={() => changeThemeColor(color)}
+              onClick={() => onColorChange(color)} // Call the function passed as a prop
             />
           ))}
         </div>
-      </div>
-
-      {/* Other Options */}
-      <div className="mt-6">
-        <h4 className="font-semibold">RTL VERSION</h4>
-        <button className="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg">RTL Version</button>
-        <button className="mt-2 ml-2 bg-blue-600 text-white px-4 py-2 rounded-lg">LTR Version</button>
-      </div>
-
-      <div className="mt-6">
-        <h4 className="font-semibold">Boxed Version</h4>
-        <button className="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg">Boxed</button>
-        <button className="mt-2 ml-2 bg-blue-600 text-white px-4 py-2 rounded-lg">Full Width</button>
-      </div>
-
-      <div className="mt-6">
-        <h4 className="font-semibold">Want Sticky Header</h4>
-        <button className="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg">Yes</button>
-        <button className="mt-2 ml-2 bg-blue-600 text-white px-4 py-2 rounded-lg">No</button>
       </div>
     </div>
   );
