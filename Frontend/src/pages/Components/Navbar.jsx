@@ -10,6 +10,7 @@ import {
   FaBars,
   FaTimes,
 } from "react-icons/fa";
+import { NavLink } from "react-router-dom";  // Import NavLink for active link styling
 import logo from '../../assets/logo.png';  // Logo import
 
 const Navbar = () => {
@@ -22,16 +23,16 @@ const Navbar = () => {
   return (
     <div>
       {/* Top Bar */}
-      <div className="bg-[var(--primary-color)] text-black py-2"> {/* Default color is white */}
+      <div className="bg-[var(--primary-color)] text-black py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           {/* Left Section (Login, Submit Property) */}
           <div className="flex items-center space-x-6">
-            <a href="/login" className="flex items-center hover:text-gray-400">
+            <NavLink to="/login" className="flex items-center hover:text-gray-400">
               <FaUser className="mr-2" /> Login / Register
-            </a>
-            <a href="/submit-property" className="flex items-center hover:text-gray-400">
+            </NavLink>
+            <NavLink to="/submit-property" className="flex items-center hover:text-gray-400">
               <FaHome className="mr-2" /> List Your Room
-            </a>
+            </NavLink>
           </div>
 
           {/* Right Section (Social Media) */}
@@ -48,9 +49,9 @@ const Navbar = () => {
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400">
               <FaLinkedinIn />
             </a>
-            <a href="/contact-us" className="bg-green-500 hover:bg-green-600 text-white font-semibold py-1 px-3 rounded">
+            <NavLink to="/contact-us" className="bg-green-500 hover:bg-green-600 text-white font-semibold py-1 px-3 rounded">
               Contact Support
-            </a>
+            </NavLink>
           </div>
         </div>
       </div>
@@ -69,24 +70,54 @@ const Navbar = () => {
 
           {/* Centered Navigation Links */}
           <div className="hidden md:flex flex-1 justify-center space-x-6 text-lg font-semibold">
-            <a href="/" className="text-[var(--primary-color)] hover:text-blue-600">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "text-blue-600" : "text-[var(--primary-color)] hover:text-blue-600"
+              }
+            >
               Home
-            </a>
-            <a href="/rooms" className="text-[var(--primary-color)] hover:text-blue-600">
+            </NavLink>
+            <NavLink
+              to="/FindRoom"
+              className={({ isActive }) =>
+                isActive ? "text-blue-600" : "text-[var(--primary-color)] hover:text-blue-600"
+              }
+            >
               Find Rooms
-            </a>
-            <a href="/roommates" className="text-[var(--primary-color)] hover:text-blue-600">
+            </NavLink>
+            <NavLink
+              to="/roommates"
+              className={({ isActive }) =>
+                isActive ? "text-blue-600" : "text-[var(--primary-color)] hover:text-blue-600"
+              }
+            >
               Find Roommates
-            </a>
-            <a href="/about" className="text-[var(--primary-color)] hover:text-blue-600">
+            </NavLink>
+            <NavLink
+              to="/about-us"
+              className={({ isActive }) =>
+                isActive ? "text-blue-600" : "text-[var(--primary-color)] hover:text-blue-600"
+              }
+            >
               About Us
-            </a>
-            <a href="/blog" className="text-[var(--primary-color)] hover:text-blue-600">
+            </NavLink>
+            <NavLink
+              to="/blog"
+              className={({ isActive }) =>
+                isActive ? "text-blue-600" : "text-[var(--primary-color)] hover:text-blue-600"
+              }
+            >
               Blog
-            </a>
-            <a href="/contact-us" className="text-[var(--primary-color)] hover:text-blue-600">
+            </NavLink>
+            <NavLink
+              to="/contact-us"
+              className={({ isActive }) =>
+                isActive ? "text-blue-600" : "text-[var(--primary-color)] hover:text-blue-600"
+              }
+            >
               Contact Us
-            </a>
+            </NavLink>
           </div>
 
           {/* Right Section: Call Us */}
@@ -110,24 +141,54 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden bg-white shadow-md">
             <div className="flex flex-col space-y-4 p-4">
-              <a href="/" className="text-[var(--primary-color)] hover:text-blue-600">
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "text-blue-600" : "text-[var(--primary-color)] hover:text-blue-600"
+                }
+              >
                 Home
-              </a>
-              <a href="/rooms" className="text-[var(--primary-color)] hover:text-blue-600">
+              </NavLink>
+              <NavLink
+                to="/FindRoom"
+                className={({ isActive }) =>
+                  isActive ? "text-blue-600" : "text-[var(--primary-color)] hover:text-blue-600"
+                }
+              >
                 Find Rooms
-              </a>
-              <a href="/roommates" className="text-[var(--primary-color)] hover:text-blue-600">
+              </NavLink>
+              <NavLink
+                to="/roommates"
+                className={({ isActive }) =>
+                  isActive ? "text-blue-600" : "text-[var(--primary-color)] hover:text-blue-600"
+                }
+              >
                 Find Roommates
-              </a>
-              <a href="/about" className="text-[var(--primary-color)] hover:text-blue-600">
+              </NavLink>
+              <NavLink
+                to="/about-us"
+                className={({ isActive }) =>
+                  isActive ? "text-blue-600" : "text-[var(--primary-color)] hover:text-blue-600"
+                }
+              >
                 About Us
-              </a>
-              <a href="/blog" className="text-[var(--primary-color)] hover:text-blue-600">
+              </NavLink>
+              <NavLink
+                to="/blog"
+                className={({ isActive }) =>
+                  isActive ? "text-blue-600" : "text-[var(--primary-color)] hover:text-blue-600"
+                }
+              >
                 Blog
-              </a>
-              <a href="/contact-us" className="text-[var(--primary-color)] hover:text-blue-600">
+              </NavLink>
+              <NavLink
+                to="/contact-us"
+                className={({ isActive }) =>
+                  isActive ? "text-blue-600" : "text-[var(--primary-color)] hover:text-blue-600"
+                }
+              >
                 Contact Us
-              </a>
+              </NavLink>
               <div className="flex items-center space-x-4">
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400">
                   <FaFacebookF />
@@ -142,9 +203,9 @@ const Navbar = () => {
                   <FaLinkedinIn />
                 </a>
               </div>
-              <a href="/contact-us" className="bg-green-500 hover:bg-green-600 text-white font-semibold py-1 px-3 rounded text-center">
+              <NavLink to="/contact-us" className="bg-green-500 hover:bg-green-600 text-white font-semibold py-1 px-3 rounded text-center">
                 Contact Support
-              </a>
+              </NavLink>
             </div>
           </div>
         )}
