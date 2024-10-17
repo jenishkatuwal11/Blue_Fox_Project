@@ -10,7 +10,7 @@ import {
   FaBars,
   FaTimes,
 } from "react-icons/fa";
-import logo from '../assets/logo.png';  // Logo import
+import logo from '../../assets/logo.png';  // Logo import
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

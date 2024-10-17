@@ -6,9 +6,9 @@ import {
   FaBath,
   FaExpandArrowsAlt,
 } from "react-icons/fa";  // Importing icons for Bedroom, Bathroom, and Area
-import houseImage from '../assets/House.png';  // Image for House property
-import roomImage from '../assets/Room.png';  // Image for Room property
-import apartmentImage from '../assets/Apartment.png';  // Image for Apartment property
+import houseImage from '../../../assets/House.png';  // Image for House property
+import roomImage from '../../../assets/Room.png';  // Image for Room property
+import apartmentImage from '../../../assets/Apartment.png';  // Image for Apartment property
 
 const OurProperty = () => {
   useEffect(() => {

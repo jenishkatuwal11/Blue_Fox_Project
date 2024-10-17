@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import AOS from "aos";  // Importing AOS for animations
 import "aos/dist/aos.css";  // Importing AOS styles
-import houseIcon from '../assets/House.png';  // Icon for House-related services
-import roomIcon from '../assets/Room.png';  // Icon for Room-related services
-import apartmentIcon from '../assets/Apartment.png';  // Icon for Apartment-related services
+import houseIcon from '../../../assets/House.png';  // Icon for House-related services
+import roomIcon from '../../../assets/Room.png';  // Icon for Room-related services
+import apartmentIcon from '../../../assets/Apartment.png';  // Icon for Apartment-related services
 
 const Service = () => {
   useEffect(() => {

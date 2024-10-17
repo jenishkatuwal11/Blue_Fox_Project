@@ -7,9 +7,9 @@ import {
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa"; // Importing social icons
-import agentImage1 from '../assets/Agent1.png';  // Example image for agent 1
-import agentImage2 from '../assets/Agent2.png';  // Example image for agent 2
-import agentImage3 from '../assets/Agent3.png';  // Example image for agent 3
+import agentImage1 from '../../../assets/Agent1.png';  // Example image for agent 1
+import agentImage2 from '../../../assets/Agent2.png';  // Example image for agent 2
+import agentImage3 from '../../../assets/Agent3.png';  // Example image for agent 3
 
 const Agent = () => {
   useEffect(() => {

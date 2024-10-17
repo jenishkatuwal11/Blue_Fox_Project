@@ -4,9 +4,9 @@ import "aos/dist/aos.css";  // Importing AOS styles
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";  // Importing icons for the toggle buttons
 
 // Assuming the correct relative paths for the images
-import heroImage1 from '../assets/HeroSection.png';
-import heroImage2 from '../assets/RoomPic.png';
-import heroImage3 from '../assets/ApartmentPic.png';
+import heroImage1 from '../../../assets/HeroSection.png';
+import heroImage2 from '../../../assets/RoomPic.png';
+import heroImage3 from '../../../assets/ApartmentPic.png';
 
 const HeroSection = () => {
   const [currentImage, setCurrentImage] = useState(0);

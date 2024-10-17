@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import AOS from "aos";  // Importing AOS for animations
 import "aos/dist/aos.css";  // Importing AOS styles
-import roomiImage from '../assets/roomi.png';  // Assuming roomi.png is already in the assets folder
-import easyToUseImage from '../assets/easy-to-use.png';  // Corrected Path for Easy to Use image
-import verifiedImage from '../assets/Verified.png';  // Corrected Path for Verified image
+import roomiImage from '../../../assets/roomi.png';  // Assuming roomi.png is already in the assets folder
+import easyToUseImage from '../../../assets/easy-to-use.png';  // Corrected Path for Easy to Use image
+import verifiedImage from '../../../assets/Verified.png';  // Corrected Path for Verified image
 
 const AboutUs = () => {
   useEffect(() => {
