@@ -89,16 +89,16 @@ const Agent = () => {
 
                 {/* Social Media Icons */}
                 <div className="mt-4 flex justify-center space-x-4">
-                  <a href={agent.socials.facebook} className="text-blue-600 hover:text-blue-800">
+                  <a href={agent.socials.facebook} className="text-blue-500 hover:text-blue-700">
                     <FaFacebookF className="w-6 h-6" />
                   </a>
-                  <a href={agent.socials.twitter} className="text-blue-600 hover:text-blue-800">
+                  <a href={agent.socials.twitter} className="text-blue-500 hover:text-blue-700">
                     <FaTwitter className="w-6 h-6" />
                   </a>
-                  <a href={agent.socials.instagram} className="text-blue-600 hover:text-blue-800">
+                  <a href={agent.socials.instagram} className="text-blue-500 hover:text-blue-700">
                     <FaInstagram className="w-6 h-6" />
                   </a>
-                  <a href={agent.socials.linkedin} className="text-blue-600 hover:text-blue-800">
+                  <a href={agent.socials.linkedin} className="text-blue-500 hover:text-blue-700">
                     <FaLinkedinIn className="w-6 h-6" />
                   </a>
                 </div>

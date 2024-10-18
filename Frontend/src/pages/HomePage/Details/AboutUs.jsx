@@ -24,7 +24,7 @@ const AboutUs = () => {
 
         {/* Text Section */}
         <div data-aos="fade-left">
-          <h2 className="text-[var(--primary-color)] text-lg font-semibold mb-2">Who We Are</h2>
+          <h2 className="text-blue-500 text-lg font-semibold mb-2">Who We Are</h2>
           <h1 className="text-4xl font-bold mb-6">
             Find Your Perfect Roommate with iRoomit
           </h1>
@@ -73,7 +73,7 @@ const AboutUs = () => {
 
       {/* Contact Us Button */}
       <div className="text-center mt-10" data-aos="fade-up">
-        <button className="bg-[var(--primary-color)] text-white px-6 py-3 rounded-full hover:bg-[var(--primary-color)] transition duration-300 ease-in-out">
+        <button className="bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition duration-300 ease-in-out">
           Contact Us
         </button>
       </div>

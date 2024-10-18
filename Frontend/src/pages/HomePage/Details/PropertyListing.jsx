@@ -1,16 +1,12 @@
 import React, { useEffect } from "react";
 import AOS from "aos";  // Importing AOS for animations
 import "aos/dist/aos.css";  // Importing AOS styles
-import {
-  FaBed,
-  FaBath,
-  FaExpandArrowsAlt,
-} from "react-icons/fa";  // Importing icons for Bedroom, Bathroom, and Area
+import { FaBed, FaBath, FaExpandArrowsAlt } from "react-icons/fa";  // Importing icons for Bedroom, Bathroom, and Area
 import houseImage from '../../../assets/House.png';  // Image for House property
 import roomImage from '../../../assets/Room.png';  // Image for Room property
 import apartmentImage from '../../../assets/Apartment.png';  // Image for Apartment property
 
-const OurProperty = () => {
+const PropertyListing = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, easing: 'ease-in-out' });  // Initialize AOS animations
   }, []);
@@ -52,11 +48,11 @@ const OurProperty = () => {
   ];
 
   return (
-    <section className="bg-gray-100 py-16">
+    <section className="bg-blue-100 py-16"> {/* Changed background color to light blue */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <div className="lg:text-center" data-aos="fade-up">
-          <h2 className="text-base text-[var(--primary-color)] font-semibold tracking-wide uppercase">Our Properties</h2>
+          <h2 className="text-base text-blue-500 font-semibold tracking-wide uppercase">Our Properties</h2>
           <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
             Explore Premium Properties in Kathmandu & Bhaktapur
           </p>
@@ -77,24 +73,24 @@ const OurProperty = () => {
               <img src={property.image} alt={property.title} className="w-full h-64 object-cover" />
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900">{property.title}</h3>
-                <p className="text-[var(--primary-color)] text-lg font-bold mt-2">{property.price}</p>
+                <p className="text-blue-500 text-lg font-bold mt-2">{property.price}</p>
                 <p className="mt-2 text-gray-600">{property.description}</p>
                 <ul className="mt-4 text-sm text-gray-500">
                   <li>Type: {property.type}</li>
                   <li className="flex items-center">
-                    <FaBed className="text-[var(--primary-color)] w-5 h-5 mr-2" />
+                    <FaBed className="text-blue-500 w-5 h-5 mr-2" />
                     {property.bedrooms} Bedrooms
                   </li>
                   <li className="flex items-center">
-                    <FaBath className="text-[var(--primary-color)] w-5 h-5 mr-2" />
+                    <FaBath className="text-blue-500 w-5 h-5 mr-2" />
                     {property.bathrooms} Bathrooms
                   </li>
                   <li className="flex items-center">
-                    <FaExpandArrowsAlt className="text-[var(--primary-color)] w-5 h-5 mr-2" />
+                    <FaExpandArrowsAlt className="text-blue-500 w-5 h-5 mr-2" />
                     {property.area}
                   </li>
                 </ul>
-                <button className="mt-4 bg-[var(--primary-color)] text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition-colors duration-300">
+                <button className="mt-4 bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors duration-300">
                   View Details
                 </button>
               </div>
@@ -106,7 +102,7 @@ const OurProperty = () => {
         <div className="text-center mt-10" data-aos="fade-up" data-aos-delay="800">
           <button
             onClick={() => window.location.href = '/properties'}
-            className="bg-[var(--primary-color)] text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition-colors duration-300"
+            className="bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition-colors duration-300"
           >
             Explore All Properties
           </button>
@@ -116,4 +112,4 @@ const OurProperty = () => {
   );
 };
 
-export default OurProperty;
+export default PropertyListing;

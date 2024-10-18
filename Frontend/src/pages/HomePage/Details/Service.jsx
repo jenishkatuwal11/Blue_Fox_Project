@@ -65,8 +65,7 @@ const Service = () => {
         <div className="text-center mt-10" data-aos="fade-up" data-aos-delay="800">
           <button
             onClick={handleExploreSolutions}
-            className="px-6 py-3 rounded-full hover:bg-blue-600 transition-colors duration-300"
-            style={{ backgroundColor: 'var(--primary-color)', color: 'white' }}  // Applying theme color
+            className="bg-blue-400 text-white px-6 py-3 rounded-full hover:bg-blue-500 transition-colors duration-300"
           >
             Explore Solutions
           </button>

@@ -87,7 +87,7 @@ const Navbar = () => {
               Find Rooms
             </NavLink>
             <NavLink
-              to="/roommates"
+              to="/FindRoommates"
               className={({ isActive }) =>
                 isActive ? "text-blue-600" : "text-[var(--primary-color)] hover:text-blue-600"
               }
@@ -95,23 +95,16 @@ const Navbar = () => {
               Find Roommates
             </NavLink>
             <NavLink
-              to="/about-us"
+              to="/AboutUs"
               className={({ isActive }) =>
                 isActive ? "text-blue-600" : "text-[var(--primary-color)] hover:text-blue-600"
               }
             >
               About Us
             </NavLink>
+            
             <NavLink
-              to="/blog"
-              className={({ isActive }) =>
-                isActive ? "text-blue-600" : "text-[var(--primary-color)] hover:text-blue-600"
-              }
-            >
-              Blog
-            </NavLink>
-            <NavLink
-              to="/contact-us"
+              to="/ContactUs"
               className={({ isActive }) =>
                 isActive ? "text-blue-600" : "text-[var(--primary-color)] hover:text-blue-600"
               }
