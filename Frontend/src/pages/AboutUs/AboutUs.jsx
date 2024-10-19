@@ -1,4 +1,3 @@
-import React from "react";
 import agentImage from "../../assets/Agent1.png"; // Using Agent1.png as the team image
 import missionImage from "../../assets/House.png"; // Using House.png for the mission image
 import Navbar from "../Components/Navbar";
@@ -47,7 +46,9 @@ const AboutUs = () => {
 
           {/* Our Team */}
           <div className="mt-12 text-center">
-            <h2 className="text-3xl font-semibold text-gray-900">Meet the Team</h2>
+            <h2 className="text-3xl font-semibold text-gray-900">
+              Meet the Team
+            </h2>
             <p className="mt-4 text-gray-600">
               Our team is passionate about creating a platform that puts your
               needs first. With a mix of tech enthusiasts and real estate
@@ -70,9 +71,7 @@ const AboutUs = () => {
             </h2>
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="p-6 bg-white shadow-lg rounded-lg">
-                <h3 className="text-2xl font-semibold text-gray-900">
-                  Trust
-                </h3>
+                <h3 className="text-2xl font-semibold text-gray-900">Trust</h3>
                 <p className="mt-4 text-gray-600">
                   We prioritize your safety by ensuring all listings and users
                   are verified for a trustworthy experience.
