@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom"; // Import Link to enable routing
 import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import icons from react-icons
 import loginImg from "../../assets/loginImg.png"; // Update this path to your image
+import { FaHome } from "react-icons/fa"; // Import home icon
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
@@ -11,6 +12,17 @@ const LoginForm = () => {
       className="min-h-screen flex items-center justify-center bg-cover bg-center px-4 md:px-0"
       style={{ backgroundImage: `url(${loginImg})` }}
     >
+      {/* Return to Home Link */}
+      <div className="text-xl absolute top-4 left-4">
+        <Link
+          to="/"
+          className="flex items-center text-white hover:text-purple-400 transition duration-300"
+        >
+          <FaHome className="mr-2" />
+          Return Home
+        </Link>
+      </div>
+
       {/* Transparent Form Container */}
       <div className="bg-white/5 backdrop-blur-sm p-6 md:p-10 rounded-lg shadow-lg max-w-sm md:max-w-md w-full border border-white/10">
         <h2 className="text-center text-2xl md:text-3xl font-semibold text-white mb-6 md:mb-8 tracking-wide">
