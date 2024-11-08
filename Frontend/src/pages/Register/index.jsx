@@ -41,7 +41,7 @@ const RegisterForm = () => {
         <h2 className="text-center text-2xl md:text-3xl font-semibold text-white mb-6 md:mb-8 tracking-wide">
           Register
         </h2>
-
+{/* example */}
         <form onSubmit={handleSubmit}>
           {/* Full Name Field */}
           <div className="mb-4 md:mb-6 relative">
