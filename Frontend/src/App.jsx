@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landingpage from "./pages/HomePage/Landingpage";
 import FindRoom from "./pages/FindRoom/FindRoom";
