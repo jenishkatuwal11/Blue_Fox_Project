@@ -6,6 +6,7 @@ import AboutUs from "./pages/AboutUs/AboutUs";
 import ContactUs from "./pages/ContactUs/ContactUs";
 import LoginForm from "./pages/Login/index"; // Login form component
 import RegisterForm from "./pages/Register/index"; // Register form component
+import AdminDashboard from "./pages/AdminDashboard/Dashboardhome";
 
 function App() {
   return (
@@ -17,10 +18,12 @@ function App() {
           <Route path="/FindRoommates" element={<FindRoommates />} />
           <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/ContactUs" element={<ContactUs />} />
-          <Route path="/login" element={<LoginForm />} />{" "}
           {/* Route for LoginForm */}
-          <Route path="/register" element={<RegisterForm />} />{" "}
+          <Route path="/login" element={<LoginForm />} />{" "}
           {/* New route for RegisterForm */}
+          <Route path="/register" element={<RegisterForm />} />{" "}
+          {/* Admin Routes */}
+          <Route path="/dashboard" element={<AdminDashboard />} />{" "}
         </Routes>
       </main>
     </BrowserRouter>
