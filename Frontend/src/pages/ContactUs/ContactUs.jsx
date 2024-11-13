@@ -1,8 +1,7 @@
-import React from 'react';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
-import Navbar from '../Components/Navbar';
-import Footer from '../Components/Footer';
-import logo from '../../assets/logo.png'; // Assuming the logo image is in the assets folder
+import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
+import logo from "../../assets/logo.png"; // Assuming the logo image is in the assets folder
 
 const ContactUs = () => {
   return (
@@ -46,7 +45,9 @@ const ContactUs = () => {
                   rows="4"
                 ></textarea>
               </div>
-              <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Send</button>
+              <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+                Send
+              </button>
             </form>
           </div>
 
@@ -54,12 +55,15 @@ const ContactUs = () => {
           <div className="bg-white p-8 shadow-lg rounded-lg">
             <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
             <p className="mb-4">
-              To inquire more about us or if you have a problem related to RoommateHub, please feel free to contact us.
+              To inquire more about us or if you have a problem related to
+              RoommateHub, please feel free to contact us.
             </p>
             <div className="space-y-4">
               <div className="flex items-center">
                 <FaEnvelope className="text-blue-600 w-6 h-6 mr-4" />
-                <span className="text-lg text-gray-800">info@roommatehub.com</span>
+                <span className="text-lg text-gray-800">
+                  info@roommatehub.com
+                </span>
               </div>
               <div className="flex items-center">
                 <FaPhone className="text-blue-600 w-6 h-6 mr-4" />
@@ -87,8 +91,9 @@ const ContactUs = () => {
           <div className="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6">
             <img src={logo} alt="Roommate Hub Logo" className="w-48 h-48" />
             <p className="text-lg text-gray-800">
-              Well, we now have a solution to buy, sell, and rent your property in a more digital form. You can now access
-              and compare properties side by side and find your suitable match.
+              Well, we now have a solution to buy, sell, and rent your property
+              in a more digital form. You can now access and compare properties
+              side by side and find your suitable match.
             </p>
           </div>
         </div>

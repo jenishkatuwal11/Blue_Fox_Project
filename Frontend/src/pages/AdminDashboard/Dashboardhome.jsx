@@ -1,30 +1,62 @@
-// src/pages/AdminDashboard.js
+// src/pages/AdminDashboard/AdminDashboard.js
 import { useState, useMemo } from "react";
-import { FiSearch, FiBell, FiLogOut } from "react-icons/fi";
-import { HiOutlinePlus } from "react-icons/hi";
-import { FaUser, FaBookmark, FaEye, FaHeart } from "react-icons/fa";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
 import { Bar } from "react-chartjs-2";
-import "chart.js/auto";
+import { FaUser, FaBookmark, FaEye, FaHeart } from "react-icons/fa";
+import Sidebar from "./sidenav";
+import TopBar from "./TopBar";
+
+// Register necessary components in Chart.js
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 const AdminDashboard = () => {
+  const [darkMode, setDarkMode] = useState(false);
   const [sortBy, setSortBy] = useState("Weekly");
 
-  // Memoized bar chart data to prevent re-renders
-  const barData = useMemo(
-    () => ({
+  const toggleDarkMode = () => setDarkMode(!darkMode);
+
+  // Bar chart data based on sortBy value
+  const barData = useMemo(() => {
+    let data;
+    switch (sortBy) {
+      case "Monthly":
+        data = [60000, 45000, 30000, 70000, 50000, 25000, 40000];
+        break;
+      case "Yearly":
+        data = [200000, 150000, 180000, 220000, 170000, 140000, 210000];
+        break;
+      default: // Weekly
+        data = [18000, 12000, 4000, 16000, 8000, 2000, 14000];
+    }
+
+    return {
       labels: ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"],
       datasets: [
         {
           label: "Total View",
-          data: [18000, 12000, 4000, 16000, 8000, 2000, 14000],
+          data: data,
           backgroundColor: "#f97316",
           borderColor: "#f97316",
           borderWidth: 2,
         },
       ],
-    }),
-    []
-  );
+    };
+  }, [sortBy]);
 
   const chartOptions = {
     maintainAspectRatio: true,
@@ -33,149 +65,87 @@ const AdminDashboard = () => {
         display: true,
         position: "top",
         labels: {
-          color: "#333",
+          color: darkMode ? "#fff" : "#333",
         },
       },
     },
     scales: {
-      x: {
-        grid: {
-          display: false,
-        },
-      },
       y: {
         beginAtZero: true,
-        ticks: {
-          stepSize: 4000,
-        },
+        ticks: { stepSize: 40000, color: darkMode ? "#fff" : "#333" },
       },
     },
   };
 
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row bg-gray-100">
-      {/* Sidebar */}
-      <aside className="w-full lg:w-64 bg-indigo-900 text-white p-5 sticky top-0 h-auto lg:h-screen flex-shrink-0">
-        <div className="flex items-center space-x-2 mb-10">
-          <span className="text-2xl font-bold">Dash UI</span>
-        </div>
-        <nav className="space-y-2">
-          <a href="#" className="block text-lg font-semibold text-gray-300">
-            Dashboard
-          </a>
-          <a href="#" className="block text-lg font-semibold text-gray-300">
-            Message
-          </a>
-        </nav>
-        <div className="mt-10 space-y-2">
-          <p className="font-semibold text-gray-400">PROFILE</p>
-          <a href="#" className="block text-lg font-semibold text-gray-300">
-            Profile
-          </a>
-          <a href="#" className="block text-lg font-semibold text-gray-300">
-            Account Settings
-          </a>
-          <a href="#" className="block text-lg font-semibold text-gray-300">
-            Membership
-          </a>
-        </div>
-        <div className="mt-10 space-y-2">
-          <p className="font-semibold text-gray-400">LISTING</p>
-          <a href="#" className="block text-lg font-semibold text-gray-300">
-            My Properties
-          </a>
-          <a href="#" className="block text-lg font-semibold text-gray-300">
-            Add New Property
-          </a>
-          <a href="#" className="block text-lg font-semibold text-gray-300">
-            Favourites
-          </a>
-          <a href="#" className="block text-lg font-semibold text-gray-300">
-            Saved Search
-          </a>
-          <a href="#" className="block text-lg font-semibold text-gray-300">
-            Reviews
-          </a>
-        </div>
-        <div className="mt-10">
-          <p className="font-semibold text-gray-400">82% Profile Complete</p>
-          <div className="w-full bg-gray-600 rounded-full h-2 mt-2">
-            <div
-              className="bg-indigo-400 h-2 rounded-full"
-              style={{ width: "82%" }}
-            ></div>
-          </div>
-        </div>
-        <button className="flex items-center mt-10 text-lg font-semibold text-red-300">
-          <FiLogOut className="mr-2" /> Logout
-        </button>
-      </aside>
-
-      {/* Main Content */}
+    <div
+      className={`${
+        darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-900"
+      } min-h-screen flex`}
+    >
+      <Sidebar darkMode={darkMode} />
       <main className="flex-1 p-8">
-        {/* Top Bar */}
-        <div className="flex flex-col lg:flex-row lg:justify-between items-start lg:items-center mb-6 space-y-4 lg:space-y-0 bg-indigo-900 p-4 rounded-lg text-white">
-          <h1 className="text-3xl font-bold">Dashboard</h1>
-          <div className="flex items-center space-x-4">
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Search here.."
-                className="pl-4 pr-10 py-2 border rounded-lg w-full text-gray-700"
-              />
-              <FiSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-            </div>
-            <FiBell className="text-white" />
-            <button className="flex items-center px-4 py-2 bg-indigo-700 text-white rounded-lg">
-              <HiOutlinePlus className="mr-2" /> Create New Project
-            </button>
-            <img
-              src="https://via.placeholder.com/40"
-              alt="Profile"
-              className="w-10 h-10 rounded-full"
-            />
-          </div>
-        </div>
+        <TopBar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
-        {/* Stats */}
+        {/* Stats Cards */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-          <div className="bg-white p-4 rounded-lg flex items-center space-x-4">
+          <div
+            className={`${
+              darkMode ? "bg-gray-800 text-white" : "bg-white text-gray-900"
+            } p-4 rounded-lg flex items-center space-x-4`}
+          >
             <FaUser className="text-indigo-900 text-3xl" />
             <div>
-              <p className="text-sm text-gray-500">Projects</p>
+              <p className="text-sm">Projects</p>
               <h2 className="text-2xl font-bold">18</h2>
               <p className="text-sm text-gray-400">2 Completed</p>
             </div>
           </div>
-          <div className="bg-white p-4 rounded-lg flex items-center space-x-4">
+          <div
+            className={`${
+              darkMode ? "bg-gray-800 text-white" : "bg-white text-gray-900"
+            } p-4 rounded-lg flex items-center space-x-4`}
+          >
             <FaBookmark className="text-indigo-900 text-3xl" />
             <div>
-              <p className="text-sm text-gray-500">Active Task</p>
+              <p className="text-sm">Active Task</p>
               <h2 className="text-2xl font-bold">132</h2>
               <p className="text-sm text-gray-400">28 Completed</p>
             </div>
           </div>
-          <div className="bg-white p-4 rounded-lg flex items-center space-x-4">
+          <div
+            className={`${
+              darkMode ? "bg-gray-800 text-white" : "bg-white text-gray-900"
+            } p-4 rounded-lg flex items-center space-x-4`}
+          >
             <FaEye className="text-indigo-900 text-4xl" />
             <div>
-              <p className="text-sm text-gray-500">Teams</p>
+              <p className="text-sm">Teams</p>
               <h2 className="text-2xl font-bold">12</h2>
               <p className="text-sm text-gray-400">1 Completed</p>
             </div>
           </div>
-          <div className="bg-white p-4 rounded-lg flex items-center space-x-4">
+          <div
+            className={`${
+              darkMode ? "bg-gray-800 text-white" : "bg-white text-gray-900"
+            } p-4 rounded-lg flex items-center space-x-4`}
+          >
             <FaHeart className="text-indigo-900 text-4xl" />
             <div>
-              <p className="text-sm text-gray-500">Productivity</p>
+              <p className="text-sm">Productivity</p>
               <h2 className="text-2xl font-bold">76%</h2>
               <p className="text-sm text-gray-400">5% Completed</p>
             </div>
           </div>
         </div>
 
-        {/* Property View Bar Chart */}
+        {/* Property View Bar Chart and Recent Messages */}
         <div className="flex flex-col lg:flex-row gap-6 mb-6">
-          <div className="bg-white p-6 rounded-lg w-full lg:w-2/3">
+          <div
+            className={`${
+              darkMode ? "bg-gray-800 text-white" : "bg-white"
+            } p-6 rounded-lg w-full lg:w-2/3`}
+          >
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-bold">Property View</h2>
               <select
@@ -192,51 +162,13 @@ const AdminDashboard = () => {
           </div>
 
           {/* Recent Messages */}
-          <div className="bg-white p-6 rounded-lg w-full lg:w-1/3">
-            <h2 className="text-xl font-bold mb-4">Recent Message</h2>
+          <div
+            className={`${
+              darkMode ? "bg-gray-800 text-white" : "bg-white"
+            } p-6 rounded-lg w-full lg:w-1/3`}
+          >
+            <h2 className="text-xl font-bold mb-4">Recent Messages</h2>
             <ul className="space-y-4">
-              <li className="cursor-pointer">
-                <div className="flex justify-between">
-                  <p className="flex items-center">
-                    <span className="w-2.5 h-2.5 bg-red-500 rounded-full mr-2"></span>
-                    <span className="font-semibold">Jenny Rio.</span>
-                  </p>
-                  <span className="text-sm text-gray-500">AUG 22</span>
-                </div>
-                <p className="font-bold text-gray-700">
-                  Work inquiry from google.
-                </p>
-                <p className="text-gray-500 mb-2">
-                  Hello, This is Jenny from google. We’re the largest online
-                  platform offer...
-                </p>
-                <button className="text-sm bg-gray-200 px-3 py-1 rounded-md text-gray-600">
-                  details.pdf
-                </button>
-                <hr className="my-4 border-gray-300" />
-              </li>
-
-              <li className="cursor-pointer">
-                <div className="flex justify-between">
-                  <p className="flex items-center">
-                    <span className="w-2.5 h-2.5 bg-blue-500 rounded-full mr-2"></span>
-                    <span className="font-semibold">Hasan Islam.</span>
-                  </p>
-                  <span className="text-sm text-gray-500">MAY 22</span>
-                </div>
-                <p className="font-bold text-gray-700">
-                  Product Designer Opportunities
-                </p>
-                <p className="text-gray-500 mb-2">
-                  Hello, Greeting from Uber. Hope you doing great. I am
-                  approcing to you for...
-                </p>
-                <button className="text-sm bg-gray-200 px-3 py-1 rounded-md text-gray-600">
-                  details.pdf
-                </button>
-                <hr className="my-4 border-gray-300" />
-              </li>
-
               <li className="cursor-pointer">
                 <div className="flex justify-between">
                   <p className="flex items-center">
@@ -245,16 +177,59 @@ const AdminDashboard = () => {
                   </p>
                   <span className="text-sm text-gray-500">JULY 22</span>
                 </div>
-                <p className="font-bold text-gray-700">
+                <p className="font-bold text-gray-700 dark:text-gray-200">
                   Hunting Marketing Specialist
                 </p>
-                <p className="text-gray-500">
+                <p className="text-gray-500 dark:text-gray-400">
                   Hello, This is Jannat from HuntX. We offer business solutions
                   to our client...
                 </p>
-                <button className="text-sm bg-gray-200 px-3 py-1 rounded-md text-gray-600">
+                <button className="text-sm bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-md text-gray-600 dark:text-gray-300">
                   details.pdf
                 </button>
+              </li>
+
+              {/* Additional Messages */}
+              <li className="cursor-pointer">
+                <div className="flex justify-between">
+                  <p className="flex items-center">
+                    <span className="w-2.5 h-2.5 bg-purple-500 rounded-full mr-2"></span>
+                    <span className="font-semibold">Amelia Brown.</span>
+                  </p>
+                  <span className="text-sm text-gray-500">SEP 10</span>
+                </div>
+                <p className="font-bold text-gray-700 dark:text-gray-200">
+                  Freelance Web Developer Role
+                </p>
+                <p className="text-gray-500 dark:text-gray-400 mb-2">
+                  Hi, Amelia here. I wanted to discuss a freelance opportunity
+                  for web development...
+                </p>
+                <button className="text-sm bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-md text-gray-600 dark:text-gray-300">
+                  details.pdf
+                </button>
+                <hr className="my-4 border-gray-300 dark:border-gray-600" />
+              </li>
+
+              <li className="cursor-pointer">
+                <div className="flex justify-between">
+                  <p className="flex items-center">
+                    <span className="w-2.5 h-2.5 bg-yellow-500 rounded-full mr-2"></span>
+                    <span className="font-semibold">John Doe.</span>
+                  </p>
+                  <span className="text-sm text-gray-500">OCT 05</span>
+                </div>
+                <p className="font-bold text-gray-700 dark:text-gray-200">
+                  Marketing Strategy Collaboration
+                </p>
+                <p className="text-gray-500 dark:text-gray-400 mb-2">
+                  Hi there, looking forward to collaborate on marketing
+                  strategies. Lets connect...
+                </p>
+                <button className="text-sm bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-md text-gray-600 dark:text-gray-300">
+                  details.pdf
+                </button>
+                <hr className="my-4 border-gray-300 dark:border-gray-600" />
               </li>
             </ul>
           </div>
