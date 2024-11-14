@@ -1,15 +1,15 @@
-// src/pages/AdminDashboard/components/TopBar.js
 import { FiSearch, FiBell, FiSun, FiMoon } from "react-icons/fi";
 import PropTypes from "prop-types";
 import AdminImg from "../../assets/Agent1.png";
 
 const TopBar = ({ darkMode, toggleDarkMode }) => (
   <div
-    className={`flex flex-col lg:flex-row lg:justify-between items-start lg:items-center mb-6 space-y-4 lg:space-y-0 p-4 rounded-lg ${
+    className={`sticky top-0 z-10 flex flex-col lg:flex-row lg:justify-between items-start lg:items-center mb-6 space-y-4 lg:space-y-0 p-4 ${
       darkMode ? "bg-gray-800 text-white" : "bg-indigo-900 text-white"
     }`}
+    style={{ borderRadius: 0 }} // Ensures no rounded corners
   >
-    <h1 className="text-3xl font-bold">Dashboard</h1>
+    <h1 className="text-3xl font-bold">Admin Dashboard</h1>
     <div className="flex items-center space-x-4">
       <div className="relative">
         <input
