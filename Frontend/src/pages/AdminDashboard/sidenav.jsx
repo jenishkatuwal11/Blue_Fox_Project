@@ -1,8 +1,21 @@
-import { FiLogOut } from "react-icons/fi";
+import {
+  FiLogOut,
+  FiHome,
+  FiMessageSquare,
+  FiUser,
+  FiSettings,
+  FiCreditCard,
+  FiFileText,
+  FiPlusSquare,
+  FiHeart,
+  FiSave,
+  FiStar,
+} from "react-icons/fi";
 import PropTypes from "prop-types";
 import LogoImg from "../../assets/logo.png";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
-const sidenav = ({ darkMode }) => (
+const Sidenav = ({ darkMode }) => (
   <aside
     className={`${
       darkMode ? "bg-gray-800" : "bg-indigo-900"
@@ -17,42 +30,85 @@ const sidenav = ({ darkMode }) => (
       <span className="text-white text-2xl font-bold">Room Finder</span>
     </div>
     <nav className="space-y-2">
-      <a href="#" className="block text-lg font-semibold text-gray-300">
-        Dashboard
-      </a>
-      <a href="#" className="block text-lg font-semibold text-gray-300">
-        Message
-      </a>
+      {/* Use Link to specify the paths */}
+      <Link
+        to="/dashboard"
+        className="flex items-center text-lg font-semibold text-gray-300 space-x-2"
+      >
+        <FiHome />
+        <span>Dashboard</span>
+      </Link>
+      <Link
+        to="/dashboard/messages"
+        className="flex items-center text-lg font-semibold text-gray-300 space-x-2"
+      >
+        <FiMessageSquare />
+        <span>Message</span>
+      </Link>
       <p className="font-semibold text-gray-400 mt-10 pt-5">PROFILE</p>
-      <a href="#" className="block text-lg font-semibold text-gray-300">
-        Profile
-      </a>
-      <a href="#" className="block text-lg font-semibold text-gray-300">
-        Account Settings
-      </a>
-      <a href="#" className="block text-lg font-semibold text-gray-300">
-        Membership
-      </a>
+      <Link
+        to="/dashboard/profile"
+        className="flex items-center text-lg font-semibold text-gray-300 space-x-2"
+      >
+        <FiUser />
+        <span>Profile</span>
+      </Link>
+      <Link
+        to="/dashboard/account-settings"
+        className="flex items-center text-lg font-semibold text-gray-300 space-x-2"
+      >
+        <FiSettings />
+        <span>Account Settings</span>
+      </Link>
+      <Link
+        to="/dashboard/membership"
+        className="flex items-center text-lg font-semibold text-gray-300 space-x-2"
+      >
+        <FiCreditCard />
+        <span>Membership</span>
+      </Link>
+
       {/* Add other links as necessary */}
       <div className="mt-10 pt-5 space-y-2">
         <p className="font-semibold text-gray-400">LISTING</p>
-        <a href="#" className="block text-lg font-semibold text-gray-300">
-          My Properties
-        </a>
-        <a href="#" className="block text-lg font-semibold text-gray-300">
-          Add New Property
-        </a>
-        <a href="#" className="block text-lg font-semibold text-gray-300">
-          Favourites
-        </a>
-        <a href="#" className="block text-lg font-semibold text-gray-300">
-          Saved Search
-        </a>
-        <a href="#" className="block text-lg font-semibold text-gray-300">
-          Reviews
-        </a>
+        <Link
+          to="/dashboard/my-properties"
+          className="flex items-center text-lg font-semibold text-gray-300 space-x-2"
+        >
+          <FiFileText />
+          <span>My Properties</span>
+        </Link>
+        <Link
+          to="/dashboard/add-property"
+          className="flex items-center text-lg font-semibold text-gray-300 space-x-2"
+        >
+          <FiPlusSquare />
+          <span>Add New Property</span>
+        </Link>
+        <Link
+          to="/dashboard/favourites"
+          className="flex items-center text-lg font-semibold text-gray-300 space-x-2"
+        >
+          <FiHeart />
+          <span>Favourites</span>
+        </Link>
+        <Link
+          to="/dashboard/saved-search"
+          className="flex items-center text-lg font-semibold text-gray-300 space-x-2"
+        >
+          <FiSave />
+          <span>Saved Search</span>
+        </Link>
+        <Link
+          to="/dashboard/reviews"
+          className="flex items-center text-lg font-semibold text-gray-300 space-x-2"
+        >
+          <FiStar />
+          <span>Reviews</span>
+        </Link>
       </div>
     </nav>
+
     <div className="mt-10">
       <p className="font-semibold text-gray-400">82% Profile Complete</p>
       <div className="w-full bg-gray-600 rounded-full h-2 mt-2">
@@ -62,14 +118,15 @@ const sidenav = ({ darkMode }) => (
         ></div>
       </div>
     </div>
-    <button className="flex items-center mt-10 text-lg font-semibold text-red-300">
-      <FiLogOut className="mr-2" /> Logout
+    <button className="flex items-center mt-10 text-lg font-semibold text-red-300 space-x-2">
+      <FiLogOut />
+      <span>Logout</span>
     </button>
   </aside>
 );
 
-sidenav.propTypes = {
+Sidenav.propTypes = {
   darkMode: PropTypes.bool,
 };
 
-export default sidenav;
+export default Sidenav;
