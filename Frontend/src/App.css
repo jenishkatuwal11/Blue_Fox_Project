@@ -1,0 +1,23 @@
+:root {
+  --primary-color: #2196f3; /* Default primary color */
+}
+
+/* Use the primary color in your CSS */
+button {
+  background-color: var(--primary-color);
+}
+
+a {
+  color: var(--primary-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--primary-color);
+}
+
+/* Modify any other elements with the primary color */

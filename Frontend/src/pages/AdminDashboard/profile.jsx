@@ -1,24 +1,10 @@
-import { useRef } from "react";
 import PropTypes from "prop-types";
 import AdminImg from "../../assets/Agent1.png";
 
 const Profile = ({ darkMode }) => {
-  const fileInputRef = useRef(null);
-
-  const handleUploadClick = () => {
-    fileInputRef.current.click();
-  };
-
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      console.log("Selected file:", file);
-    }
-  };
-
   return (
     <div
-      className={`max-w-3xl mx-auto p-6 rounded-lg shadow-md mt-6 ${
+      className={`max-w-5xl mx-auto p-6 rounded-lg shadow-md mt-6 ${
         darkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"
       }`}
     >
@@ -29,26 +15,6 @@ const Profile = ({ darkMode }) => {
           alt="Profile"
           className="w-24 h-24 border-4 border-blue-500 rounded-full"
         />
-        <div>
-          <button
-            onClick={handleUploadClick}
-            className={`border px-4 py-2 rounded-md hover:bg-opacity-75 ${
-              darkMode
-                ? "border-orange-400 text-orange-400 hover:bg-orange-600"
-                : "border-orange-500 text-orange-500 hover:bg-orange-50"
-            }`}
-          >
-            Upload new photo
-          </button>
-          <button className="ml-4 text-red-500 hover:underline">Delete</button>
-          <input
-            type="file"
-            ref={fileInputRef}
-            onChange={handleFileChange}
-            style={{ display: "none" }}
-            accept="image/*"
-          />
-        </div>
       </div>
 
       <form className="space-y-6">
@@ -179,24 +145,6 @@ const Profile = ({ darkMode }) => {
             }`}
             rows="4"
           ></textarea>
-        </div>
-        <div className="flex space-x-4 mt-6">
-          <button
-            type="button" // Change to "button" to avoid form submission
-            className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600"
-          >
-            Save
-          </button>
-          <button
-            type="button" // Change to "button" to avoid form submission
-            className={`px-4 py-2 rounded-md ${
-              darkMode
-                ? "text-gray-300 hover:text-gray-100"
-                : "text-gray-600 hover:text-gray-800"
-            }`}
-          >
-            Cancel
-          </button>
         </div>
       </form>
     </div>
