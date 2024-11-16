@@ -2,15 +2,15 @@ import {
   FiLogOut,
   FiHome,
   FiMessageSquare,
-  FiUser,
   FiSettings,
   FiCreditCard,
-  FiFileText,
   FiPlusSquare,
   FiHeart,
   FiSave,
   FiStar,
 } from "react-icons/fi";
+import { CgProfile } from "react-icons/cg";
+import { FaRegUser } from "react-icons/fa";
 import PropTypes from "prop-types";
 import LogoImg from "../../assets/logo.png";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
@@ -50,7 +50,7 @@ const Sidenav = ({ darkMode }) => (
         to="/dashboard/profile"
         className="flex items-center text-lg font-semibold text-gray-300 space-x-2"
       >
-        <FiUser />
+        <CgProfile />
         <span>Profile</span>
       </Link>
       <Link
@@ -72,11 +72,11 @@ const Sidenav = ({ darkMode }) => (
       <div className="mt-10 pt-5 space-y-2">
         <p className="font-semibold text-gray-400">LISTING</p>
         <Link
-          to="/dashboard/my-properties"
+          to="/dashboard/active-users"
           className="flex items-center text-lg font-semibold text-gray-300 space-x-2"
         >
-          <FiFileText />
-          <span>My Properties</span>
+          <FaRegUser />
+          <span>Active Users</span>
         </Link>
         <Link
           to="/dashboard/add-property"

@@ -9,6 +9,9 @@ import LoginForm from "./pages/Login/index"; // Login form component
 import RegisterForm from "./pages/Register/index"; // Register form component
 import AdminDashboard from "./pages/AdminDashboard/Dashboardhome";
 import Profile from "./pages/AdminDashboard/profile";
+import AccountSettings from "./pages/AdminDashboard/accountSetting";
+import ActiveUsers from "./pages/AdminDashboard/UsersList";
+import AddUserForm from "./pages/AdminDashboard/AddUserForm";
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
         {/* Admin Routes with nested structure */}
         <Route path="/dashboard/*" element={<AdminDashboard />}>
           <Route path="profile" element={<Profile />} />
+          <Route path="account-settings" element={<AccountSettings />} />
+          <Route path="active-users" element={<ActiveUsers />} />
+          <Route path="add-user" element={<AddUserForm />} />
           {/* Additional nested routes can be added here */}
         </Route>
       </Routes>
