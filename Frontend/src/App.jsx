@@ -12,6 +12,8 @@ import Profile from "./pages/AdminDashboard/profile";
 import AccountSettings from "./pages/AdminDashboard/accountSetting";
 import ActiveUsers from "./pages/AdminDashboard/UsersList";
 import AddUserForm from "./pages/AdminDashboard/AddUserForm";
+import AddProperty from "./pages/AdminDashboard/addProperty";
+import Review from "./pages/AdminDashboard/Reviews";
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
           <Route path="account-settings" element={<AccountSettings />} />
           <Route path="active-users" element={<ActiveUsers />} />
           <Route path="add-user" element={<AddUserForm />} />
+          <Route path="add-property" element={<AddProperty />} />
+          <Route path="reviews" element={<Review />} />
           {/* Additional nested routes can be added here */}
         </Route>
       </Routes>
