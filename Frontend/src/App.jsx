@@ -14,6 +14,7 @@ import ActiveUsers from "./pages/AdminDashboard/UsersList";
 import AddUserForm from "./pages/AdminDashboard/AddUserForm";
 import AddProperty from "./pages/AdminDashboard/addProperty";
 import Review from "./pages/AdminDashboard/Reviews";
+import AdminLogin from "./pages/AdminLogin/adminLogin"; // Admin Login Form
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
         <Route path="/ContactUs" element={<ContactUs />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<RegisterForm />} />
+
+        {/* Admin Login Route */}
+        <Route path="/admin-login" element={<AdminLogin />} />
 
         {/* Admin Routes with nested structure */}
         <Route path="/dashboard/*" element={<AdminDashboard />}>
