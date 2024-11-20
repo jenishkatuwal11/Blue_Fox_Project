@@ -132,7 +132,7 @@ const FindRoommates = () => {
   const [selectedPets, setSelectedPets] = useState([]);
   const [selectedZodiacSigns, setSelectedZodiacSigns] = useState([]);
   const [sortOption, setSortOption] = useState("lastActivity");
-  const [roommatePreference, setRoommatePreference] = useState("");
+  const [setRoommatePreference] = useState("");
 
   const toggleFilter = (filter) => {
     setSelectedFilter(selectedFilter === filter ? null : filter);
@@ -215,7 +215,7 @@ const FindRoommates = () => {
                 >
                   <FaTimes size={16} />
                 </button>
-                <p className="text-sm font-bold mb-4">I'm looking for:</p>
+                <p className="text-sm font-bold mb-4">I&#39;m looking for:</p>
                 <div className="flex flex-col space-y-2">
                   <label>
                     <input
