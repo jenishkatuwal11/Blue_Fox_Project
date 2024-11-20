@@ -560,7 +560,7 @@ const FindRoommates = () => {
                       </div>
                     </div>
                   </div>
-                  <button className="mt-4 w-full bg-black text-white py-2 rounded-md hover:bg-gray-800">
+                  <button className="mt-4 w-full bg-blue-500 text-white py-2 rounded-md hover:bg-gray-800">
                     Message
                   </button>
                 </div>
