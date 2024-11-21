@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { FaArrowUp } from "react-icons/fa";  // Importing the up arrow icon
+import { useState, useEffect } from "react";
+import { FaArrowUp } from "react-icons/fa"; // Importing the up arrow icon
 
 const Scroll = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -17,7 +17,7 @@ const Scroll = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",  // Smooth scroll effect
+      behavior: "smooth", // Smooth scroll effect
     });
   };
 

@@ -36,186 +36,192 @@ const Navbar = () => {
 
         {/* Navbar Links */}
         <div className="flex items-center space-x-6 text-blue-800">
-         {/* Buy Dropdown */}
-<div className="relative">
-  <button
-    onClick={() => toggleDropdown("Buy")}
-    className="flex items-center space-x-1 focus:outline-none"
-  >
-    <span>Buy</span>
-    <FaCaretDown />
-  </button>
-  {dropdown === "Buy" && (
-    <div
-      className="absolute bg-white border border-gray-300 text-gray-800 py-4 px-6 rounded shadow-lg mt-1 z-50 w-[600px] grid grid-cols-3 gap-4"
-      role="menu"
-      aria-labelledby="buy-menu"
-    >
-      <div>
-        <h4 className="font-bold text-blue-600 mb-2">Property By Locality</h4>
-        <Link
-          to="/buy?location=Kathmandu"
-          className="block py-1 hover:text-blue-500"
-        >
-          Property for Sale in Kathmandu
-        </Link>
-        <Link
-          to="/buy?location=Bhaktapur"
-          className="block py-1 hover:text-blue-500"
-        >
-          Property for Sale in Bhaktapur
-        </Link>
-        <Link
-          to="/buy?location=Lalitpur"
-          className="block py-1 hover:text-blue-500"
-        >
-          Property for Sale in Lalitpur
-        </Link>
-      </div>
-      <div>
-        <h4 className="font-bold text-blue-600 mb-2">Property By Type</h4>
-        <Link
-          to="/buy?type=Residential%20Plots"
-          className="block py-1 hover:text-blue-500"
-        >
-          Residential Plots
-        </Link>
-        <Link
-          to="/buy?type=Flats%20%2F%20Apartments"
-          className="block py-1 hover:text-blue-500"
-        >
-          Flats / Apartments
-        </Link>
-        <Link
-          to="/buy?type=Office%20Space"
-          className="block py-1 hover:text-blue-500"
-        >
-          Office Space
-        </Link>
-        <Link
-          to="/buy?type=Commercial%20Shops"
-          className="block py-1 hover:text-blue-500"
-        >
-          Commercial Shops
-        </Link>
-      </div>
-      <div>
-        <h4 className="font-bold text-blue-600 mb-2">Property By BHK</h4>
-        <Link
-          to="/buy?bhk=1%20BHK"
-          className="block py-1 hover:text-blue-500"
-        >
-          1 BHK Property
-        </Link>
-        <Link
-          to="/buy?bhk=2%20BHK"
-          className="block py-1 hover:text-blue-500"
-        >
-          2 BHK Property
-        </Link>
-        <Link
-          to="/buy?bhk=3%20BHK"
-          className="block py-1 hover:text-blue-500"
-        >
-          3 BHK Property
-        </Link>
-        <Link
-          to="/buy?bhk=4%2B%20BHK"
-          className="block py-1 hover:text-blue-500"
-        >
-          4+ BHK Property
-        </Link>
-      </div>
-    </div>
-  )}
-</div>
+          {/* Buy Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => toggleDropdown("Buy")}
+              className="flex items-center space-x-1 focus:outline-none"
+            >
+              <span>Buy</span>
+              <FaCaretDown />
+            </button>
+            {dropdown === "Buy" && (
+              <div
+                className="absolute bg-white border border-gray-300 text-gray-800 py-4 px-6 rounded shadow-lg mt-1 z-50 w-[600px] grid grid-cols-3 gap-4"
+                role="menu"
+                aria-labelledby="buy-menu"
+              >
+                <div>
+                  <h4 className="font-bold text-blue-600 mb-2">
+                    Property By Locality
+                  </h4>
+                  <Link
+                    to="/buy?location=Kathmandu"
+                    className="block py-1 hover:text-blue-500"
+                  >
+                    Property for Sale in Kathmandu
+                  </Link>
+                  <Link
+                    to="/buy?location=Bhaktapur"
+                    className="block py-1 hover:text-blue-500"
+                  >
+                    Property for Sale in Bhaktapur
+                  </Link>
+                  <Link
+                    to="/buy?location=Lalitpur"
+                    className="block py-1 hover:text-blue-500"
+                  >
+                    Property for Sale in Lalitpur
+                  </Link>
+                </div>
+                <div>
+                  <h4 className="font-bold text-blue-600 mb-2">
+                    Property By Type
+                  </h4>
+                  <Link
+                    to="/buy?type=Residential%20Plots"
+                    className="block py-1 hover:text-blue-500"
+                  >
+                    Residential Plots
+                  </Link>
+                  <Link
+                    to="/buy?type=Flats%20%2F%20Apartments"
+                    className="block py-1 hover:text-blue-500"
+                  >
+                    Flats / Apartments
+                  </Link>
+                  <Link
+                    to="/buy?type=Office%20Space"
+                    className="block py-1 hover:text-blue-500"
+                  >
+                    Office Space
+                  </Link>
+                  <Link
+                    to="/buy?type=Commercial%20Shops"
+                    className="block py-1 hover:text-blue-500"
+                  >
+                    Commercial Shops
+                  </Link>
+                </div>
+                <div>
+                  <h4 className="font-bold text-blue-600 mb-2">
+                    Property By BHK
+                  </h4>
+                  <Link
+                    to="/buy?bhk=1%20BHK"
+                    className="block py-1 hover:text-blue-500"
+                  >
+                    1 BHK Property
+                  </Link>
+                  <Link
+                    to="/buy?bhk=2%20BHK"
+                    className="block py-1 hover:text-blue-500"
+                  >
+                    2 BHK Property
+                  </Link>
+                  <Link
+                    to="/buy?bhk=3%20BHK"
+                    className="block py-1 hover:text-blue-500"
+                  >
+                    3 BHK Property
+                  </Link>
+                  <Link
+                    to="/buy?bhk=4%2B%20BHK"
+                    className="block py-1 hover:text-blue-500"
+                  >
+                    4+ BHK Property
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
 
-         {/* Rent Dropdown */}
-<div className="relative">
-  <button
-    onClick={() => toggleDropdown("Rent")}
-    className="flex items-center space-x-1 focus:outline-none"
-  >
-    <span>Rent</span>
-    <FaCaretDown />
-  </button>
-  {dropdown === "Rent" && (
-    <div
-      className="absolute bg-white border border-gray-300 text-gray-800 py-4 px-6 rounded shadow-lg mt-1 z-50 w-[600px] grid grid-cols-3 gap-4"
-      role="menu"
-      aria-labelledby="rent-menu"
-    >
-      <div>
-        <h4 className="font-bold text-blue-600 mb-2">
-          Rental Property By Locality
-        </h4>
-        <Link
-          to="/rent?location=Kathmandu"
-          className="block py-1 hover:text-blue-500"
-        >
-          Rental in Kathmandu
-        </Link>
-        <Link
-          to="/rent?location=Bhaktapur"
-          className="block py-1 hover:text-blue-500"
-        >
-          Rental in Bhaktapur
-        </Link>
-        <Link
-          to="/rent?location=Lalitpur"
-          className="block py-1 hover:text-blue-500"
-        >
-          Rental in Lalitpur
-        </Link>
-      </div>
-      <div>
-        <h4 className="font-bold text-blue-600 mb-2">
-          Rental Property By Type
-        </h4>
-        <Link
-          to="/rent?type=Office%20Space"
-          className="block py-1 hover:text-blue-500"
-        >
-          Office Space
-        </Link>
-        <Link
-          to="/rent?type=Apartments"
-          className="block py-1 hover:text-blue-500"
-        >
-          Apartments
-        </Link>
-        <Link
-          to="/rent?type=Shops"
-          className="block py-1 hover:text-blue-500"
-        >
-          Shops
-        </Link>
-      </div>
-      <div>
-        <h4 className="font-bold text-blue-600 mb-2">
-          Rental Property By BHK
-        </h4>
-        <Link
-          to="/rent?bhk=1%20BHK"
-          className="block py-1 hover:text-blue-500"
-        >
-          1 BHK Rentals
-        </Link>
-        <Link
-          to="/rent?bhk=2%20BHK"
-          className="block py-1 hover:text-blue-500"
-        >
-          2 BHK Rentals
-        </Link>
-        <Link
-          to="/rent?bhk=3%20BHK"
-          className="block py-1 hover:text-blue-500"
-        >
-          3+ BHK Rentals
-        </Link>
-      </div>
-    </div>
-  )}
+          {/* Rent Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => toggleDropdown("Rent")}
+              className="flex items-center space-x-1 focus:outline-none"
+            >
+              <span>Rent</span>
+              <FaCaretDown />
+            </button>
+            {dropdown === "Rent" && (
+              <div
+                className="absolute bg-white border border-gray-300 text-gray-800 py-4 px-6 rounded shadow-lg mt-1 z-50 w-[600px] grid grid-cols-3 gap-4"
+                role="menu"
+                aria-labelledby="rent-menu"
+              >
+                <div>
+                  <h4 className="font-bold text-blue-600 mb-2">
+                    Rental Property By Locality
+                  </h4>
+                  <Link
+                    to="/rent?location=Kathmandu"
+                    className="block py-1 hover:text-blue-500"
+                  >
+                    Rental in Kathmandu
+                  </Link>
+                  <Link
+                    to="/rent?location=Bhaktapur"
+                    className="block py-1 hover:text-blue-500"
+                  >
+                    Rental in Bhaktapur
+                  </Link>
+                  <Link
+                    to="/rent?location=Lalitpur"
+                    className="block py-1 hover:text-blue-500"
+                  >
+                    Rental in Lalitpur
+                  </Link>
+                </div>
+                <div>
+                  <h4 className="font-bold text-blue-600 mb-2">
+                    Rental Property By Type
+                  </h4>
+                  <Link
+                    to="/rent?type=Office%20Space"
+                    className="block py-1 hover:text-blue-500"
+                  >
+                    Office Space
+                  </Link>
+                  <Link
+                    to="/rent?type=Apartments"
+                    className="block py-1 hover:text-blue-500"
+                  >
+                    Apartments
+                  </Link>
+                  <Link
+                    to="/rent?type=Shops"
+                    className="block py-1 hover:text-blue-500"
+                  >
+                    Shops
+                  </Link>
+                </div>
+                <div>
+                  <h4 className="font-bold text-blue-600 mb-2">
+                    Rental Property By BHK
+                  </h4>
+                  <Link
+                    to="/rent?bhk=1%20BHK"
+                    className="block py-1 hover:text-blue-500"
+                  >
+                    1 BHK Rentals
+                  </Link>
+                  <Link
+                    to="/rent?bhk=2%20BHK"
+                    className="block py-1 hover:text-blue-500"
+                  >
+                    2 BHK Rentals
+                  </Link>
+                  <Link
+                    to="/rent?bhk=3%20BHK"
+                    className="block py-1 hover:text-blue-500"
+                  >
+                    3+ BHK Rentals
+                  </Link>
+                </div>
+              </div>
+            )}
           </div>
           {/* Agents Dropdown */}
           <div className="relative">
@@ -256,63 +262,71 @@ const Navbar = () => {
               </div>
             )}
           </div>
-{/* Projects Dropdown */}
-<div className="relative">
-  <button
-    onClick={() => toggleDropdown("Projects")}
-    className="flex items-center space-x-1 focus:outline-none"
-  >
-    <span>Projects</span>
-    <FaCaretDown />
-  </button>
-  {dropdown === "Projects" && (
-    <div
-      className="absolute bg-white border border-gray-300 text-gray-800 py-4 px-6 rounded shadow-lg mt-1 z-50 w-[400px] grid grid-cols-2 gap-4"
-      role="menu"
-      aria-labelledby="projects-menu"
-    >
-      {/* Column 1: Current Projects */}
-      <div>
-        <h4 className="font-bold text-blue-600 mb-2">Current Projects</h4>
-        <button
-          onClick={() => handleFilterClick("New Projects in Kathmandu")}
-          className="block py-1 hover:text-blue-500"
-        >
-          New Projects in Kathmandu
-        </button>
-        <button
-          onClick={() => handleFilterClick("Upcoming Projects in Bhaktapur")}
-          className="block py-1 hover:text-blue-500"
-        >
-          Upcoming Projects in Bhaktapur
-        </button>
-        <button
-          onClick={() => handleFilterClick("Projects in Lalitpur")}
-          className="block py-1 hover:text-blue-500"
-        >
-          Projects in Lalitpur
-        </button>
-      </div>
+          {/* Projects Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => toggleDropdown("Projects")}
+              className="flex items-center space-x-1 focus:outline-none"
+            >
+              <span>Projects</span>
+              <FaCaretDown />
+            </button>
+            {dropdown === "Projects" && (
+              <div
+                className="absolute bg-white border border-gray-300 text-gray-800 py-4 px-6 rounded shadow-lg mt-1 z-50 w-[400px] grid grid-cols-2 gap-4"
+                role="menu"
+                aria-labelledby="projects-menu"
+              >
+                {/* Column 1: Current Projects */}
+                <div>
+                  <h4 className="font-bold text-blue-600 mb-2">
+                    Current Projects
+                  </h4>
+                  <button
+                    onClick={() =>
+                      handleFilterClick("New Projects in Kathmandu")
+                    }
+                    className="block py-1 hover:text-blue-500"
+                  >
+                    New Projects in Kathmandu
+                  </button>
+                  <button
+                    onClick={() =>
+                      handleFilterClick("Upcoming Projects in Bhaktapur")
+                    }
+                    className="block py-1 hover:text-blue-500"
+                  >
+                    Upcoming Projects in Bhaktapur
+                  </button>
+                  <button
+                    onClick={() => handleFilterClick("Projects in Lalitpur")}
+                    className="block py-1 hover:text-blue-500"
+                  >
+                    Projects in Lalitpur
+                  </button>
+                </div>
 
-      {/* Column 2: Popular Projects */}
-      <div>
-        <h4 className="font-bold text-blue-600 mb-2">Popular Projects</h4>
-        <button
-          onClick={() => handleFilterClick("Residential Projects")}
-          className="block py-1 hover:text-blue-500"
-        >
-          Residential Projects
-        </button>
-        <button
-          onClick={() => handleFilterClick("Commercial Projects")}
-          className="block py-1 hover:text-blue-500"
-        >
-          Commercial Projects
-        </button>
-      </div>
-    </div>
-  )}
-</div>
+                {/* Column 2: Popular Projects */}
+                <div>
+                  <h4 className="font-bold text-blue-600 mb-2">
+                    Popular Projects
+                  </h4>
+                  <button
+                    onClick={() => handleFilterClick("Residential Projects")}
+                    className="block py-1 hover:text-blue-500"
+                  >
+                    Residential Projects
+                  </button>
+                  <button
+                    onClick={() => handleFilterClick("Commercial Projects")}
+                    className="block py-1 hover:text-blue-500"
+                  >
+                    Commercial Projects
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
 
           {/* Services Dropdown */}
           <div className="relative">
@@ -363,11 +377,11 @@ const Navbar = () => {
 
         {/* Action Buttons */}
         <div className="flex items-center space-x-4">
-      <Link to="/post-property-detail">
-        <button className="bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700 transition duration-200">
-          PostPropertyDetail
-        </button>
-      </Link>
+          <Link to="/post-property-detail">
+            <button className="bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700 transition duration-200">
+              PostPropertyDetail
+            </button>
+          </Link>
           <button
             onClick={() => handleFilterClick("Sign In")}
             className="text-blue-800 hover:underline"
