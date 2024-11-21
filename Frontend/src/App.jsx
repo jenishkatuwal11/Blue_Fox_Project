@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landingpage from "./pages/HomePage/Landingpage";
 import FindRoom from "./pages/FindRoom/FindRoom";
 import FindRoommates from "./pages/FindRoommates/FindRoommates";
-import AboutUs from "./pages/AboutUs/AboutUs";
 import ContactUs from "./pages/ContactUs/ContactUs";
 import LoginForm from "./pages/Login/index"; // Login form component
 import RegisterForm from "./pages/Register/index"; // Register form component
@@ -15,6 +14,9 @@ import AddUserForm from "./pages/AdminDashboard/AddUserForm";
 import AddProperty from "./pages/AdminDashboard/addProperty";
 import Review from "./pages/AdminDashboard/Reviews";
 import AdminLogin from "./pages/AdminLogin/adminLogin"; // Admin Login Form
+import Rent from "./pages/RentSaleDetails/Rent";
+import PostPropertyDetail from "./pages/HomePage/Details/PostPropertyDetail";
+import Buy from "./pages/RentSaleDetails/Buy";
 
 function App() {
   return (
@@ -23,11 +25,13 @@ function App() {
         <Route path="/" element={<Landingpage />} />
         <Route path="/FindRoom" element={<FindRoom />} />
         <Route path="/FindRoommates" element={<FindRoommates />} />
-        <Route path="/AboutUs" element={<AboutUs />} />
+        <Route path="/AboutUs" element={<Rent />} />
+        <Route path="/post-property-detail" element={<PostPropertyDetail />} />
         <Route path="/ContactUs" element={<ContactUs />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<RegisterForm />} />
-
+        <Route path="/Rent" element={<Rent />} />
+        <Route path="/Buy" element={<Buy />} />
         {/* Admin Login Route */}
         <Route path="/admin-login" element={<AdminLogin />} />
 
