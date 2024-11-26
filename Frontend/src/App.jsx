@@ -17,6 +17,8 @@ import AdminLogin from "./pages/AdminLogin/adminLogin"; // Admin Login Form
 import Rent from "./pages/RentSaleDetails/Rent";
 import PostPropertyDetail from "./pages/HomePage/Details/PostPropertyDetail";
 import Buy from "./pages/RentSaleDetails/Buy";
+import Projects from "./pages/ProjectsDetails/Projects";
+import ProjectDetail from "./pages/ProjectsDetails/ProjectDetails";
 
 function App() {
   return (
@@ -32,6 +34,9 @@ function App() {
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/Rent" element={<Rent />} />
         <Route path="/Buy" element={<Buy />} />
+        <Route path="/projects/:city" element={<Projects />} />
+        <Route path="/project-detail/:id" element={<ProjectDetail />} />
+
         {/* Admin Login Route */}
         <Route path="/admin-login" element={<AdminLogin />} />
 

@@ -1,3 +1,5 @@
+///Nav BAR
+
 import { useState } from "react";
 import { FaCaretDown } from "react-icons/fa";
 import { Link } from "react-router-dom"; // Import the Link component q
@@ -223,40 +225,42 @@ const Navbar = () => {
               </div>
             )}
           </div>
-          {/* Agents Dropdown */}
+          {/* Roommates Dropdown */}
           <div className="relative">
             <button
-              onClick={() => toggleDropdown("Agents")}
+              onClick={() => toggleDropdown("Roommates")}
               className="flex items-center space-x-1 focus:outline-none"
             >
-              <span>Agents</span>
+              <span>Roommates</span>
               <FaCaretDown />
             </button>
-            {dropdown === "Agents" && (
+            {dropdown === "Roommates" && (
               <div
                 className="absolute bg-white border border-gray-300 text-gray-800 py-4 px-6 rounded shadow-lg mt-1 z-50 w-[300px] grid grid-cols-1 gap-4"
                 role="menu"
-                aria-labelledby="agents-menu"
+                aria-labelledby="Roommates-menu"
               >
                 <div>
-                  <h4 className="font-bold text-blue-600 mb-2">Find Agents</h4>
+                  <h4 className="font-bold text-blue-600 mb-2">
+                    Find Roommates In
+                  </h4>
                   <button
-                    onClick={() => handleFilterClick("Agents in Kathmandu")}
+                    onClick={() => handleFilterClick("Roommates in Kathmandu")}
                     className="block py-1 hover:text-blue-500"
                   >
-                    Agents in Kathmandu
+                    Kathmandu
                   </button>
                   <button
-                    onClick={() => handleFilterClick("Agents in Bhaktapur")}
+                    onClick={() => handleFilterClick("Roommates in Bhaktapur")}
                     className="block py-1 hover:text-blue-500"
                   >
-                    Agents in Bhaktapur
+                    Bhaktapur
                   </button>
                   <button
-                    onClick={() => handleFilterClick("Agents in Lalitpur")}
+                    onClick={() => handleFilterClick("Roommates in Lalitpur")}
                     className="block py-1 hover:text-blue-500"
                   >
-                    Agents in Lalitpur
+                    Lalitpur
                   </button>
                 </div>
               </div>
@@ -273,56 +277,43 @@ const Navbar = () => {
             </button>
             {dropdown === "Projects" && (
               <div
-                className="absolute bg-white border border-gray-300 text-gray-800 py-4 px-6 rounded shadow-lg mt-1 z-50 w-[400px] grid grid-cols-2 gap-4"
+                className="absolute bg-white border border-gray-300 text-gray-800 py-4 px-6 rounded shadow-lg mt-1 z-50 w-[350px] grid grid-cols-2 gap-4"
                 role="menu"
                 aria-labelledby="projects-menu"
               >
                 {/* Column 1: Current Projects */}
                 <div>
                   <h4 className="font-bold text-blue-600 mb-2">
-                    Current Projects
+                    Current Projects In
                   </h4>
-                  <button
-                    onClick={() =>
-                      handleFilterClick("New Projects in Kathmandu")
-                    }
-                    className="block py-1 hover:text-blue-500"
-                  >
-                    New Projects in Kathmandu
-                  </button>
-                  <button
-                    onClick={() =>
-                      handleFilterClick("Upcoming Projects in Bhaktapur")
-                    }
-                    className="block py-1 hover:text-blue-500"
-                  >
-                    Upcoming Projects in Bhaktapur
-                  </button>
-                  <button
-                    onClick={() => handleFilterClick("Projects in Lalitpur")}
-                    className="block py-1 hover:text-blue-500"
-                  >
-                    Projects in Lalitpur
-                  </button>
-                </div>
-
-                {/* Column 2: Popular Projects */}
-                <div>
-                  <h4 className="font-bold text-blue-600 mb-2">
-                    Popular Projects
-                  </h4>
-                  <button
-                    onClick={() => handleFilterClick("Residential Projects")}
-                    className="block py-1 hover:text-blue-500"
-                  >
-                    Residential Projects
-                  </button>
-                  <button
-                    onClick={() => handleFilterClick("Commercial Projects")}
-                    className="block py-1 hover:text-blue-500"
-                  >
-                    Commercial Projects
-                  </button>
+                  <Link to="/projects/Kathmandu">
+                    <button
+                      onClick={() =>
+                        handleFilterClick("New Projects in Kathmandu")
+                      }
+                      className="block py-1 hover:text-blue-500"
+                    >
+                      Kathmandu
+                    </button>
+                  </Link>
+                  <Link to="/projects/Bhaktapur">
+                    <button
+                      onClick={() =>
+                        handleFilterClick("Upcoming Projects in Bhaktapur")
+                      }
+                      className="block py-1 hover:text-blue-500"
+                    >
+                      Bhaktapur
+                    </button>
+                  </Link>
+                  <Link to="/projects/Lalitpur">
+                    <button
+                      onClick={() => handleFilterClick("Projects in Lalitpur")}
+                      className="block py-1 hover:text-blue-500"
+                    >
+                      Lalitpur
+                    </button>
+                  </Link>
                 </div>
               </div>
             )}
@@ -382,18 +373,22 @@ const Navbar = () => {
               PostPropertyDetail
             </button>
           </Link>
-          <button
-            onClick={() => handleFilterClick("Sign In")}
-            className="text-blue-800 hover:underline"
-          >
-            Sign In
-          </button>
-          <button
-            onClick={() => handleFilterClick("Join Free")}
-            className="text-blue-600 hover:underline"
-          >
-            Join Free
-          </button>
+          <Link to="/login">
+            <button
+              onClick={() => handleFilterClick("Sign In")}
+              className="text-blue-800 hover:underline"
+            >
+              Sign In
+            </button>
+          </Link>
+          <Link to="/register">
+            <button
+              onClick={() => handleFilterClick("Join Free")}
+              className="text-blue-600 hover:underline"
+            >
+              Join Free
+            </button>
+          </Link>
         </div>
       </div>
     </nav>

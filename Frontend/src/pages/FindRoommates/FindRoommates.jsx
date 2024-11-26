@@ -1,3 +1,5 @@
+//Roommates
+
 import { useState } from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
@@ -19,7 +21,7 @@ const FindRoommates = () => {
       id: 1,
       name: "Caleb",
       image: CalebImage,
-      location: "University Drive, Fairfax, VA, USA",
+      location: "Kathmandu",
       moveInDate: "Immediately",
       description:
         "Looking for a place to stay, I will be attending GMU and I want something to experience some form of the college 'experience'.",
@@ -30,7 +32,7 @@ const FindRoommates = () => {
       id: 2,
       name: "James Bond",
       image: JamesBond,
-      location: "Kathmandu, Nepal",
+      location: "Bhaktapur",
       moveInDate: "Oct 2024",
       description:
         "Looking for a tidy, non-smoking roommate to share a 2-bedroom apartment. Prefers a calm and quiet environment.",
@@ -41,7 +43,7 @@ const FindRoommates = () => {
       id: 3,
       name: "Michael Guragain",
       image: Michael,
-      location: "Bhaktapur, Nepal",
+      location: "Lalitpur",
       moveInDate: "Nov 2024",
       description:
         "Seeking a friendly and outgoing roommate. Enjoys hosting small gatherings and values cleanliness.",
@@ -52,7 +54,7 @@ const FindRoommates = () => {
       id: 4,
       name: "John Cena Tamang",
       image: John,
-      location: "University Drive, Fairfax, VA, USA",
+      location: "Kathmandu",
       moveInDate: "Immediately",
       description:
         "Looking for a place to stay, I will be attending GMU and I want something to experience some form of the college 'experience'.",
@@ -63,7 +65,7 @@ const FindRoommates = () => {
       id: 5,
       name: "William Tamang",
       image: William,
-      location: "University Drive, Fairfax, VA, USA",
+      location: "Bhaktapur",
       moveInDate: "Immediately",
       description:
         "Looking for a place to stay, I will be attending GMU and I want something to experience some form of the college 'experience'.",
@@ -74,7 +76,7 @@ const FindRoommates = () => {
       id: 6,
       name: "Thomas Katuwal",
       image: Thomas,
-      location: "University Drive, Fairfax, VA, USA",
+      location: "Lalitpur",
       moveInDate: "Immediately",
       description:
         "Looking for a place to stay, I will be attending GMU and I want something to experience some form of the college 'experience'.",
@@ -85,7 +87,7 @@ const FindRoommates = () => {
       id: 7,
       name: "Charles Bista",
       image: Charles,
-      location: "University Drive, Fairfax, VA, USA",
+      location: "Kathmandu",
       moveInDate: "Immediately",
       description:
         "Looking for a place to stay, I will be attending GMU and I want something to experience some form of the college 'experience'.",
@@ -96,7 +98,7 @@ const FindRoommates = () => {
       id: 8,
       name: "Rebecca Thapa",
       image: Rebecca,
-      location: "University Drive, Fairfax, VA, USA",
+      location: "Bhaktapur",
       moveInDate: "Immediately",
       description:
         "Looking for a place to stay, I will be attending GMU and I want something to experience some form of the college 'experience'.",
@@ -107,7 +109,7 @@ const FindRoommates = () => {
       id: 9,
       name: "Alan Bhandari",
       image: "https://via.placeholder.com/150",
-      location: "University Drive, Fairfax, VA, USA",
+      location: "Lalitpur",
       moveInDate: "Immediately",
       description:
         "Looking for a place to stay, I will be attending GMU and I want something to experience some form of the college 'experience'.",
@@ -117,7 +119,7 @@ const FindRoommates = () => {
     {
       id: 10,
       name: "Mr. Beast",
-      image: "https://via.placeholder.com/150",
+      image: "Katumandu",
       location: "University Drive, Fairfax, VA, USA",
       moveInDate: "Immediately",
       description:
