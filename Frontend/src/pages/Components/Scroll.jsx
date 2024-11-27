@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaArrowUp } from "react-icons/fa"; // Importing the up arrow icon
+import { FaArrowUp } from "react-icons/fa";  // Importing the up arrow icon
 
 const Scroll = () => {
   const [isVisible, setIsVisible] = useState(false);
