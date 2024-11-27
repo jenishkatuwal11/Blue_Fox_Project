@@ -4,16 +4,15 @@ import ApartmentPic from "../../../assets/ApartmentPic.png";
 import House from "../../../assets/House.png";
 import RoomPic from "../../../assets/RoomPic.png";
 import Apartment from "../../../assets/Apartment.png";
-import Verified from "../../../assets/Verified.png";
 
 const PropertiesForRent = () => {
   const filters = ["Most Popular", "By Property Type", "By BHK"];
   const properties = [
     { id: 1, image: ApartmentPic, title: "2 BHK Apartments" },
-    { id: 2, image: RoomPic, title: "Builder Floor" },
-    { id: 3, image: Verified, title: "3 BHK Apartments" },
+    { id: 2, image: RoomPic, title: "Office Space" },
+    { id: 3, image: House, title: "3 BHK Apartments" },
     { id: 4, image: Apartment, title: "Flats / Apartments" },
-    { id: 5, image: House, title: "Independent House" },
+    { id: 5, image: House, title: "Commercial Shops" },
   ];
 
   return (
@@ -36,10 +35,10 @@ const PropertiesForRent = () => {
       </section>
 
       {/* Property Cards */}
-      <section className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 px-8"> {/* Added left and right spacing */}
+      <section className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 px-8">
         {properties.map((property) => (
           <Link
-            to="/rentDetail"
+            to={`/rent?type=${encodeURIComponent(property.title)}`} // Pass the title as query parameter
             key={property.id}
             className="bg-white border border-blue-200 rounded-md overflow-hidden shadow-md hover:shadow-lg transition"
           >
@@ -47,10 +46,10 @@ const PropertiesForRent = () => {
               <img
                 src={property.image}
                 alt={property.title}
-                className="w-full h-40 object-cover transition-transform duration-300 group-hover:scale-105" // Slightly shorter height
+                className="w-full h-40 object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </div>
-            <div className="p-3 bg-blue-600"> {/* Adjusted padding */}
+            <div className="p-3 bg-blue-600">
               <h3 className="text-sm font-medium text-white text-center">
                 {property.title}
               </h3>
@@ -58,7 +57,6 @@ const PropertiesForRent = () => {
           </Link>
         ))}
       </section>
-      {/* Bottom Margin Area */}
       <div className="w-full h-8 bg-white"></div>
     </div>
   );

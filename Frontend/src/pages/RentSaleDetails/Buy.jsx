@@ -1,4 +1,10 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom"; // Import Link for routing
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
+import Scroll from "../Components/Scroll";
+
+// Import necessary images
 import houseImage from "../../assets/House.png";
 import apartmentImage from "../../assets/Apartment.png";
 
@@ -69,7 +75,6 @@ const Buy = () => {
     },
   ];
 
-  // Handle input changes for filters
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFilters((prevFilters) => ({
@@ -78,7 +83,6 @@ const Buy = () => {
     }));
   };
 
-  // Filter properties dynamically
   const filteredProperties = properties.filter((property) => {
     const matchesType =
       filters.propertyType === "All" || property.type === filters.propertyType;
@@ -108,12 +112,12 @@ const Buy = () => {
             <p className="text-sm text-gray-500">Area: {property.area}</p>
             <p className="text-sm text-gray-500">Price: ₹{property.price}</p>
             <p className="text-sm text-gray-500">Type: {property.type}</p>
-            <a
-              href="#"
+            <Link
+              to={`/roomdetails/${property.id}`} // Pass property ID
               className="mt-2 inline-block text-blue-600 font-medium hover:underline"
             >
               View Details
-            </a>
+            </Link>
           </div>
         </div>
       ))}
@@ -121,89 +125,108 @@ const Buy = () => {
   );
 
   return (
-    <div className="min-h-screen bg-blue-50">
-      {/* Header */}
-      <header className="bg-blue-600 text-white py-6">
-        <h1 className="text-3xl font-bold text-center">
-          Explore Properties for Sale
-        </h1>
-      </header>
+    <>
+      <Navbar />
+      <Scroll />
+      <div className="min-h-screen bg-blue-50">
+        {/* Header */}
+        <header className="bg-blue-600 text-white py-6">
+          <h1 className="text-3xl font-bold text-center">
+            Explore Properties for Buy
+          </h1>
+        </header>
 
-      {/* Search Filters */}
-      <section className="bg-white shadow-md p-6 rounded-lg mx-4 md:mx-20 mt-6">
-        <h2 className="text-xl font-semibold text-blue-600 mb-4">Search Filters</h2>
-        <form className="flex flex-col md:flex-row gap-4">
-          <div className="flex-1">
-            <label htmlFor="propertyType" className="block text-sm font-medium text-gray-700">
-              Property Type
-            </label>
-            <select
-              id="propertyType"
-              name="propertyType"
-              value={filters.propertyType}
-              onChange={handleInputChange}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-            >
-              <option value="All">All</option>
-              <option value="Apartment">Apartment</option>
-              <option value="House">House</option>
-            </select>
-          </div>
-          <div className="flex-1">
-            <label htmlFor="bhk" className="block text-sm font-medium text-gray-700">
-              BHK
-            </label>
-            <select
-              id="bhk"
-              name="bhk"
-              value={filters.bhk}
-              onChange={handleInputChange}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-            >
-              <option value="All">All</option>
-              <option value="3 BHK">3 BHK</option>
-              <option value="4 BHK">4 BHK</option>
-              <option value="5 BHK">5 BHK</option>
-              <option value="6 BHK">6 BHK</option>
-            </select>
-          </div>
-          <div className="flex-1">
-            <label htmlFor="minPrice" className="block text-sm font-medium text-gray-700">
-              Min Price (₹)
-            </label>
-            <input
-              id="minPrice"
-              name="minPrice"
-              type="number"
-              value={filters.minPrice}
-              onChange={handleInputChange}
-              placeholder="e.g., 500000"
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-            />
-          </div>
-          <div className="flex-1">
-            <label htmlFor="maxPrice" className="block text-sm font-medium text-gray-700">
-              Max Price (₹)
-            </label>
-            <input
-              id="maxPrice"
-              name="maxPrice"
-              type="number"
-              value={filters.maxPrice}
-              onChange={handleInputChange}
-              placeholder="e.g., 2000000"
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-            />
-          </div>
-        </form>
-      </section>
+        {/* Search Filters */}
+        <section className="bg-white shadow-md p-6 rounded-lg mx-4 md:mx-20 mt-6">
+          <h2 className="text-xl font-semibold text-blue-600 mb-4">Search Filters</h2>
+          <form className="flex flex-col md:flex-row gap-4">
+            <div className="flex-1">
+              <label
+                htmlFor="propertyType"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Property Type
+              </label>
+              <select
+                id="propertyType"
+                name="propertyType"
+                value={filters.propertyType}
+                onChange={handleInputChange}
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              >
+                <option value="All">All</option>
+                <option value="Apartment">Apartment</option>
+                <option value="House">House</option>
+              </select>
+            </div>
+            <div className="flex-1">
+              <label
+                htmlFor="bhk"
+                className="block text-sm font-medium text-gray-700"
+              >
+                BHK
+              </label>
+              <select
+                id="bhk"
+                name="bhk"
+                value={filters.bhk}
+                onChange={handleInputChange}
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              >
+                <option value="All">All</option>
+                <option value="3 BHK">3 BHK</option>
+                <option value="4 BHK">4 BHK</option>
+                <option value="5 BHK">5 BHK</option>
+                <option value="6 BHK">6 BHK</option>
+              </select>
+            </div>
+            <div className="flex-1">
+              <label
+                htmlFor="minPrice"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Min Price (₹)
+              </label>
+              <input
+                id="minPrice"
+                name="minPrice"
+                type="number"
+                value={filters.minPrice}
+                onChange={handleInputChange}
+                placeholder="e.g., 500000"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              />
+            </div>
+            <div className="flex-1">
+              <label
+                htmlFor="maxPrice"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Max Price (₹)
+              </label>
+              <input
+                id="maxPrice"
+                name="maxPrice"
+                type="number"
+                value={filters.maxPrice}
+                onChange={handleInputChange}
+                placeholder="e.g., 2000000"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              />
+            </div>
+          </form>
+        </section>
 
-      {/* Property Listings */}
-      <section className="mt-8 mx-4 md:mx-20">
-        <h2 className="text-xl font-semibold text-blue-600 mb-4">Available Properties</h2>
-        {renderProperties()}
-      </section>
-    </div>
+        {/* Property Listings */}
+        <section className="mt-8 mx-4 md:mx-20">
+          <h2 className="text-xl font-semibold text-blue-600 mb-4">
+            Available Properties
+          </h2>
+          {renderProperties()}
+        </section>
+      </div>
+      <Footer />
+    </>
   );
 };
 

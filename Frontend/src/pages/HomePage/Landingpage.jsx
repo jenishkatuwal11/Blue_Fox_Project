@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from "../Components/Navbar";
 import HeroSection from "./Details/HeroSection";
-import Agent from "./Details/Agent";
+import Roommates from "./Details/Roommates";
 import Footer from "../Components/Footer";
 import PhotoSection from "./Details/PhotoSection";
 import Scroll from "../Components/Scroll";
@@ -19,7 +19,7 @@ const Landingpage = () => {
       <PropertiesForRent />
       <PropertiesForSale />
       <RealEstateService />
-      <Agent />
+      <Roommates />
       <PhotoSection />
       <Scroll />
       <Footer />

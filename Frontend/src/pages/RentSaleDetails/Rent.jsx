@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import { FaBed, FaBath, FaExpandArrowsAlt } from "react-icons/fa";
+import { useLocation, Link } from "react-router-dom"; // Import Link for routing
 
 // Import images from the assets folder
 import ApartmentImage from "../../assets/Apartment.png";
@@ -94,7 +93,11 @@ const Rent = () => {
       !maxPrice || propertyPrice <= parseInt(maxPrice, 10);
 
     return (
-      matchesLocation && matchesType && matchesBHK && matchesMinPrice && matchesMaxPrice
+      matchesLocation &&
+      matchesType &&
+      matchesBHK &&
+      matchesMinPrice &&
+      matchesMaxPrice
     );
   });
 
@@ -115,12 +118,12 @@ const Rent = () => {
             <p className="text-sm text-gray-500">Area: {property.area}</p>
             <p className="text-sm text-gray-500">Price: {property.price}</p>
             <p className="text-sm text-gray-500">Type: {property.type}</p>
-            <a
-              href="#"
+            <Link
+              to={`/roomdetails/${property.id}`} // Link to RoomDetails page with property ID
               className="mt-2 inline-block text-blue-600 font-medium hover:underline"
             >
               View Details
-            </a>
+            </Link>
           </div>
         </div>
       ))}

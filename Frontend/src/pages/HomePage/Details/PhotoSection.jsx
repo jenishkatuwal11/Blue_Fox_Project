@@ -18,18 +18,18 @@ const PhotoSection = () => {
   }, []);
 
   const icons = [
-    { id: 1, icon: <FaHome className="w-16 h-16 text-gray-400 group-hover:text-white" />, name: "Trusthouse" },
-    { id: 2, icon: <FaBuilding className="w-16 h-16 text-gray-400 group-hover:text-white" />, name: "Propertie" },
-    { id: 3, icon: <FaLandmark className="w-16 h-16 text-gray-400 group-hover:text-white" />, name: "Luxury" },
-    { id: 4, icon: <FaLightbulb className="w-16 h-16 text-gray-400 group-hover:text-white" />, name: "Creative" },
-    { id: 5, icon: <FaCity className="w-16 h-16 text-gray-400 group-hover:text-white" />, name: "Tower" },
-    { id: 6, icon: <FaWarehouse className="w-16 h-16 text-gray-400 group-hover:text-white" />, name: "Warehouse" },
-    { id: 7, icon: <FaHotel className="w-16 h-16 text-gray-400 group-hover:text-white" />, name: "Hotel" },
-    { id: 8, icon: <FaIndustry className="w-16 h-16 text-gray-400 group-hover:text-white" />, name: "Industry" },
+    { id: 1, icon: <FaHome className="w-16 h-16 text-blue-400 group-hover:text-blue-600" />, name: "Trusthouse" },
+    { id: 2, icon: <FaBuilding className="w-16 h-16 text-blue-400 group-hover:text-blue-600" />, name: "Propertie" },
+    { id: 3, icon: <FaLandmark className="w-16 h-16 text-blue-400 group-hover:text-blue-600" />, name: "Luxury" },
+    { id: 4, icon: <FaLightbulb className="w-16 h-16 text-blue-400 group-hover:text-blue-600" />, name: "Creative" },
+    { id: 5, icon: <FaCity className="w-16 h-16 text-blue-400 group-hover:text-blue-600" />, name: "Tower" },
+    { id: 6, icon: <FaWarehouse className="w-16 h-16 text-blue-400 group-hover:text-blue-600" />, name: "Warehouse" },
+    { id: 7, icon: <FaHotel className="w-16 h-16 text-blue-400 group-hover:text-blue-600" />, name: "Hotel" },
+    { id: 8, icon: <FaIndustry className="w-16 h-16 text-blue-400 group-hover:text-blue-600" />, name: "Industry" },
   ];
 
   return (
-    <section className="bg-black py-16">
+    <section className="bg-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-8 gap-8">
           {icons.map((icon, index) => (
@@ -46,7 +46,7 @@ const PhotoSection = () => {
                 </div>
                 {/* Name of the icon */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <span className="text-white font-bold text-lg">{icon.name}</span>
+                  <span className="text-blue-600 font-bold text-lg">{icon.name}</span>
                 </div>
               </div>
             </div>
@@ -58,3 +58,4 @@ const PhotoSection = () => {
 };
 
 export default PhotoSection;
+ 

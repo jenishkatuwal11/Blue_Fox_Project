@@ -2,40 +2,34 @@ import React from "react";
 
 const services = [
   {
-    title: "Buy Properties",
+    title: "Buy",
     description: "Find your dream property to buy in Nepal hassle-free.",
     icon: "🏠", // Replace with an actual icon
-    link: "/buy-properties",
+    link: "/buy",
   },
   {
-    title: "Sell Properties",
-    description: "Sell your property quickly with trusted buyers in Nepal.",
-    icon: "💰", // Replace with an actual icon
-    link: "/sell-properties",
-  },
-  {
-    title: "Rent Properties",
+    title: "Rent",
     description: "Discover rental properties that suit your lifestyle.",
-    icon: "🏢", // Replace with an actual icon
-    link: "/rent-properties",
+    icon: "💰", // Replace with an actual icon
+    link: "/rent",
   },
   {
-    title: "Real Estate Agents",
-    description: "Connect with top real estate agents in Nepal.",
+    title: "Find Roommates",
+    description: "Connect with like-minded roommates easily in Nepal.",
     icon: "🤝", // Replace with an actual icon
-    link: "/real-estate-agents",
+    link: "/find-roommates",
   },
   {
-    title: "Property Consultants",
-    description: "Get expert advice on property investments in Nepal.",
+    title: "Projects",
+    description: "Explore ongoing and upcoming property projects in Nepal.",
     icon: "📊", // Replace with an actual icon
-    link: "/property-consultants",
+    link: "//project-details?location=Bhaktapur", // Ensure correct relative path
   },
   {
-    title: "Vaastu Consultant",
-    description: "Connect with expert Vaastu consultants for better guidance.",
+    title: "Vastu Consultant",
+    description: "Connect with expert Vastu consultants for better guidance.",
     icon: "🧭", // Replace with an actual icon
-    link: "/vaastu-consultant",
+    link: "/services/Vastu%20Consultant",
   },
 ];
 
@@ -43,7 +37,7 @@ const RealEstateService = () => {
   return (
     <div className="bg-white py-12 px-6 md:px-16">
       <h2 className="text-center text-2xl md:text-3xl font-bold mb-8 text-blue-600">
-        Real Estate Services in Nepal
+        Property Services in Nepal
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map((service, index) => (
@@ -56,10 +50,10 @@ const RealEstateService = () => {
               {service.icon}
             </div>
             <h3 className="text-lg font-semibold text-gray-800 text-center mb-2">
-                {service.title}
+              {service.title}
             </h3>
             <p className="text-sm text-gray-600 text-center">
-                {service.description}
+              {service.description}
             </p>
           </div>
         ))}

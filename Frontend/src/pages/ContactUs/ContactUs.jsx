@@ -1,7 +1,6 @@
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import logo from "../../assets/logo.png"; // Assuming the logo image is in the assets folder
 
 const ContactUs = () => {
   return (
@@ -81,20 +80,6 @@ const ContactUs = () => {
               <p>Saturday: 10 a.m. to 3 p.m.</p>
               <p>Online: 24/7</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Image Section */}
-      <section className="bg-gray-100 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6">
-            <img src={logo} alt="Roommate Hub Logo" className="w-48 h-48" />
-            <p className="text-lg text-gray-800">
-              Well, we now have a solution to buy, sell, and rent your property
-              in a more digital form. You can now access and compare properties
-              side by side and find your suitable match.
-            </p>
           </div>
         </div>
       </section>

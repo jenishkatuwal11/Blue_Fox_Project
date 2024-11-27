@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaArrowUp } from "react-icons/fa";  // Importing the up arrow icon
+import { FaArrowUp } from "react-icons/fa"; // Importing the up arrow icon
 
 const Scroll = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -17,7 +17,7 @@ const Scroll = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",  // Smooth scroll effect
+      behavior: "smooth", // Smooth scroll effect
     });
   };
 
@@ -31,7 +31,8 @@ const Scroll = () => {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="p-4 bg-[var(--primary-color)] text-white rounded-full shadow-lg hover:bg-opacity-90 transition-all"
+          className="p-4 bg-white text-blue-500 rounded-full shadow-lg hover:bg-blue-500 hover:text-white transition-all border border-blue-500"
+          aria-label="Scroll to top"
         >
           <FaArrowUp size={24} />
         </button>

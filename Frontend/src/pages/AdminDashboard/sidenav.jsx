@@ -12,7 +12,6 @@ import {
 import { CgProfile } from "react-icons/cg";
 import { FaRegUser } from "react-icons/fa";
 import PropTypes from "prop-types";
-import LogoImg from "../../assets/logo.png";
 import { Link, useNavigate } from "react-router-dom";
 
 const Sidenav = ({ darkMode }) => {
